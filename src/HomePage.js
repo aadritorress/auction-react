@@ -1,25 +1,33 @@
 
 import './App.css';
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import React from 'react';
+import { Redirect, useHistory } from 'react-router-dom'
 
 
-class HomePage extends Component {
 
+// class HomePage extends Component {
 
+function HomePage(props) {
 //active, setActice
 //history
 
+const history = useHistory();
 
-  render () {
+ const handleRoute = () =>{ 
+    history.push("/Items");
+  }
+
+
+  // render () {
     return (
       <div >
+        <h1> My App </h1>
         <button> My Profile </button>
         {/* display user information */}
         {/* display items that belongs to logged user */}
         <br></br>
         <br></br>
-        <button> Search Items </button>
+        <button onClick={handleRoute}> Search Items </button>
         {/* display all items available */}
         <br></br>
         <br></br>
@@ -27,12 +35,12 @@ class HomePage extends Component {
         {/* redirect to Item form  */}
         <br></br>
         <br></br>
-         <button onClick={this.props.handleLogOut}> Log Out </button>
-         {this.props.loggedIn ? null : <Redirect to= "/login"/>}
+        <button onClick={props.handleLogOut}> Log Out </button>
+        {props.loggedIn ? null : <Redirect to= "/login"/>}
     </div>
   );
   }
-}
+// }
 
 
 export default HomePage;

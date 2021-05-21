@@ -5,6 +5,8 @@ const LogIn = props => {
 
 
     return (
+        <div>
+             <h1>My App</h1>
         <form onSubmit={props.handleLogin} >
             <label>username</label>
             <input type='text'/>
@@ -15,6 +17,8 @@ const LogIn = props => {
             <input type='submit' />
         { props.loggedIn ? <Redirect to= "/HomePage"/> : null }
         </form>
+        {/* <button>Sign up</button> */}
+        </div>
     )
 }
 
