@@ -2,7 +2,7 @@
 export const dispatchSetItem = items =>({
 type: "SET_ITEM",
 payload: items
-})
+})   
 
 export const dispatchAddItem = item =>({
 type: "ADD_ITEM",
@@ -14,8 +14,3 @@ type: "EDIT_SOLD",
 payload: item
 })
 
-
-export const dispatchIncreaseBid = item =>({
-type: "INCREASE_BID",
-payload: item
-})

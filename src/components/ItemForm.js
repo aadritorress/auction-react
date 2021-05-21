@@ -7,7 +7,9 @@ import React, { Component } from 'react';
 class ItemForm extends Component {
     render() {
         return (
-            <div className="form">
+              <div className="row">
+          <div className="column">
+            <div className="card">
             <br></br>
             <h3>Donation Form</h3>
             <form onSubmit={this.props.addItem}>
@@ -25,6 +27,8 @@ class ItemForm extends Component {
             <br></br>
             <br></br>
             </form>
+            </div>
+            </div>
             </div>
         )
     }

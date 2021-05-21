@@ -1,14 +1,14 @@
-
 import './App.css';
 import React from 'react';
 import Items from './Items'
-import Login from './Login'
-import HomePage from './HomePage';
+import Login from './components/Login'
+import HomePage from './components/HomePage';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 // import Signup from './Signup';
-import ItemForm from './ItemForm'
+import ItemForm from './components/ItemForm'
 import { connect } from 'react-redux'
-import { dispatchAddItem, dispatchEditSold, dispatchSetItem, dispatchIncreaseBid } from './actions/itemActions'
+import { dispatchAddItem, dispatchEditSold, dispatchSetItem } from './actions/itemActions'
+// import { createStore } from 'redux';
 
 
 class App extends React.Component {
@@ -38,7 +38,6 @@ getItems = () => {
   )
 }
 
-
 handleLogin = (e) => {
   e.preventDefault()
   let user = {
@@ -67,13 +66,43 @@ fetch('http://localhost:3000/api/v1/login', postReq)
 })
 }
 
+handleSignUp = (e) => {
+  e.preventDefault()
 
- handleLogOut = () => {
-  localStorage.clear()
-  this.setState({ loggedIn: false })
+  console.log('sign up button')
+
+  let createUser = {
+    name: e.target[0].value,
+    email: e.target[1].value,
+    username: e.target[2].value,
+    password: e.target[3].value
+  }
+  console.log('user:', createUser)
+
+ let postReq = {
+   method: "POST",
+   headers: {
+     'content-type': 'application/json',
+     'accept': 'application/json'
+   },
+   body: JSON.stringify({user: createUser})
+ }
+
+fetch('http://localhost:3000/api/v1/users', postReq)
+.then (resp => resp.json())
+.then(data => {
+  // localStorage.token = data.token 
+console.log(data)
+})
 }
 
-
+ handleLogOut = () => {
+   this.setState({ loggedIn: false })
+   localStorage.clear()
+   
+  //clear my state 
+  //dispatch actions - redux 
+}
 
   addItem = (e) => {
     e.preventDefault()
@@ -106,28 +135,36 @@ fetch('http://localhost:3000/api/v1/login', postReq)
     e.target.reset();
   }
 
-
   editSold = (item) => {
+  
   console.log('edit sold') 
-  //event
+  //event?
+  fetch(`http://localhost:3000/api/v1/items/${item.id}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${localStorage.token}`
+      },
+      body: JSON.stringify(item.id)
+    })
+      .then(resp => resp.json())
+      .then(item => 
+        console.log(item)
+        // this.props.dispatchEditSold(item)
+      )
   this.props.dispatchEditSold(item)
-  }
-
-  increaseBid = () => {
-  console.log('increase bid') 
-  //event
-  // this.props.dispatchIncreaseBid(item)
   }
 
 
 render () {
 
-    return (
-      <div>
+  return (
+    <div>
        <BrowserRouter>
         <Switch>
         <Route exact path="/login">
-        <Login loggedIn={this.state.loggedIn} handleLogin={this.handleLogin}/>
+        <Login loggedIn={this.state.loggedIn} handleLogin={this.handleLogin} handleSignUp={this.handleSignUp}/>
         </Route>
         <Route exact path="/HomePage">
         <HomePage loggedIn={this.state.loggedIn} handleLogOut={this.handleLogOut}/>
@@ -162,7 +199,6 @@ const mapDispatchToProps = {
   dispatchAddItem, 
   dispatchEditSold, 
   dispatchSetItem,
-  dispatchIncreaseBid
 }
 
 

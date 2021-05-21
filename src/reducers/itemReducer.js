@@ -9,11 +9,11 @@ const itemReducer = (state = initialState, action) => {
 //conditional logic 
 switch(action.type) {
     case "SET_ITEM":
-        console.log("hitting reducer")
+        // console.log("hitting reducer")
         return {
             ...state,
              items: [...state.items, ...action.payload]
-        }
+        }  
     case "ADD_ITEM":
         return {
             ...state, 
@@ -26,12 +26,6 @@ switch(action.type) {
         return {
             ...state, 
             items: state.items.map(item => item.id === updatedItem.id ? updatedItem : item)
-        }
-
-    case "INCREASE_BID":
-        
-        return {
-           
         }
 
 
