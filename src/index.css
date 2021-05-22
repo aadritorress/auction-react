@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
 
 body {
+  background: url("https://i.ibb.co/FhR0dKY/background.png") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -9,6 +10,7 @@ body {
     padding:0;
     text-align:center;
     font-family: 'Source Code Pro', monospace;
+    color:rgb(255, 255, 255)
 }
 
 /* code {
@@ -42,6 +44,19 @@ body {
   bottom: 0.1px;
   /* border: 3px solid #8AC007; */
 }
+
+.button {
+  font-size: 0.6rem;
+  height: 2.3rem;
+  text-align: center; 
+  line-height: 0rem;
+  color: rgb(255, 255, 255);
+  background: rgb(163, 108, 24);
+  border-radius: 25px;
+  border: none; 
+  cursor: pointer;
+}
+.button:hover { color: rgb(255, 136, 0); } 
 
 .button-home {
   box-sizing: border-box;
