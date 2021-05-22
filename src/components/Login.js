@@ -10,9 +10,9 @@ const Login = (props) => {
 
     return (
       <div>
-       <h1>Auction App</h1>
-       {/* <img src="https://i.ibb.co/Jsn3KB8/auction.png" alt="calendar" width="350" height="600"></img> */}
-        <h5><strong>Sign in</strong></h5>
+       {/* <h1>Auction App</h1> */}
+       <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="350" height="350"></img>
+        <h3><strong>Sign in</strong></h3>
        <form onSubmit={(e) => 
         {   e.preventDefault()
             handleLogin(e, dispatch, props.history)}} >
@@ -22,7 +22,8 @@ const Login = (props) => {
            <label>password:</label>
            <input type='password'/>
            <br></br>
-           <input type='submit' />
+           <br></br>
+           <input className= "button" type='submit' />
        {/* { props.loggedIn ? <Redirect to= "/HomePage"/> : null } */}
        </form>
 

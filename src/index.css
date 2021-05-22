@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
 
 body {
-  background: url("https://i.ibb.co/FhR0dKY/background.png") no-repeat center center fixed; 
+  background: url("https://i.ibb.co/ZKgfZr1/background.png") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -10,7 +10,7 @@ body {
     padding:0;
     text-align:center;
     font-family: 'Source Code Pro', monospace;
-    color:rgb(255, 255, 255)
+    color:rgb(77, 35, 1)
 }
 
 /* code {
@@ -45,13 +45,22 @@ body {
   /* border: 3px solid #8AC007; */
 }
 
+.form-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  margin:50px 0; 
+  background-color: #c0a241;
+  /* width: 250px; */
+}
+
 .button {
   font-size: 0.6rem;
   height: 2.3rem;
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(163, 108, 24);
+  background: rgb(224, 71, 24);
   border-radius: 25px;
   border: none; 
   cursor: pointer;

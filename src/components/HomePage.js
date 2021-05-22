@@ -31,7 +31,7 @@ props.history.push("/login");
       <button className="button" onClick={handleItems}> Search Items </button>
       <br></br>
       <br></br>
-      <button className="button" onClick={handleOffer}> Offer Items </button>
+      <button className="button" onClick={handleOffer}> Offer Item </button>
       <br></br>
       <br></br>
       <button className="button" onClick={handleLogOut}> Log Out </button>
