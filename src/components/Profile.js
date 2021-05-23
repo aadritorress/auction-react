@@ -12,6 +12,10 @@ const Profile = (props) => {
     <div>
       <p>Profile Page</p>
       <button className="button" onClick={handleHome}> Home </button>
+      
+
+
+
     </div>
   )
 }

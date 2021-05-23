@@ -12,8 +12,8 @@ const mapDispatchToProps = (dispatch) => {
 
 const ItemForm = (props) => {
     const [name, setName] = useState('');
-    const [picture, setPicture] = useState('');
-    const [initial_price, setInitial_price] = useState('');
+    const [image, setImage] = useState('');
+    const [price, setPrice] = useState('');
     const [condition, setCondition] = useState('');
     const [city, setCity] = useState('');
     const [errors, setErrors] = useState([]);
@@ -26,7 +26,7 @@ const ItemForm = (props) => {
         e.preventDefault();
         setErrors([]);
         const item = {
-            name, picture, initial_price, condition, city, sold: false, user_id: 20, charity_id: 4
+            name, image, price, condition, city, sold: false, user_id: 26, charity_id: 1
         };
 
         const errors = [];
@@ -55,9 +55,9 @@ const ItemForm = (props) => {
              <form className = "form-card" onSubmit={handleSubmit}>
              <input type="text" value={name} onChange={e => setName(e.target.value)} name="name" placeholder="name"></input>
              <br></br>
-              <input type='text' value={picture} onChange={e => setPicture(e.target.value)} placeholder="image" name='image'/>
+              <input type='text' value={image} onChange={e => setImage(e.target.value)} placeholder="image" name='image'/>
               <br></br>
-             <input type="text" value={initial_price} name="initial_price" onChange={e => setInitial_price(e.target.value)}  placeholder="price" ></input>
+             <input type="text" value={price} name="price" onChange={e => setPrice(e.target.value)}  placeholder="price" ></input>
              <br></br>
              <input type="text" value={condition} name="condition" onChange={e => setCondition(e.target.value)} placeholder="condition" ></input>
              <br></br>

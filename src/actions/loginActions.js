@@ -25,8 +25,8 @@ export const handleLogin = (e, dispatch, history) => {
 
 // export const handleLogOut = () => {
 //  handleLogOut = () => {
-//    this.setState({ loggedIn: false })
 //    localStorage.clear()
+// }
 // }
 
 

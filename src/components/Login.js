@@ -7,30 +7,32 @@ import {useDispatch} from 'react-redux'
 
 const Login = (props) => {
     const dispatch = useDispatch()
+    
+    const handleSignUp = () =>{ 
+        props.history.push("/Signup");
+    }
 
     return (
       <div>
        {/* <h1>Auction App</h1> */}
        <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="350" height="350"></img>
+       <br></br>
+        <button className="signup-button" onClick={handleSignUp}> Sign Up</button>
         <h3><strong>Sign in</strong></h3>
-       <form onSubmit={(e) => 
+       <form onSubmit={(e) =>
         {   e.preventDefault()
             handleLogin(e, dispatch, props.history)}} >
-           <label>username:</label>
-           <input type='text'/>
+           {/* <label>username:</label> */}
+           <input type='text' placeholder='username'/>
            <br></br>
-           <label>password:</label>
-           <input type='password'/>
+           {/* <label>password:</label> */}
+           <input type='password' placeholder='password'/>
            <br></br>
            <br></br>
-           <input className= "button" type='submit' />
+           <input className= "button" type='submit' value="Sign In" />
        {/* { props.loggedIn ? <Redirect to= "/HomePage"/> : null } */}
        </form>
-
-
-   
-
-       
+        <br></br>
        </div>
     )
 }

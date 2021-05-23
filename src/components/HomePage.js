@@ -24,6 +24,7 @@ props.history.push("/login");
 
   return (
     <div>
+       <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="200" height="200"></img>
       <p> Home Page </p>
       <button className="button" onClick={handleProfile}> My Profile </button>
       <br></br>

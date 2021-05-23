@@ -34,9 +34,9 @@ export const addItem = (item) => async(dispatch, getState) => {
         const payload = item;
         dispatch({type: "ADD_ITEM", payload})
         // console.log(item)
-      })
+      })   
   }
- 
+  
 export const dispatchSetItem = items =>({
 type: "SET_ITEM",
 payload: items

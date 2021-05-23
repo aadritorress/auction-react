@@ -1,4 +1,4 @@
-//function that will chage store/state
+//function that will change store/state
 
 const initialState = {
     items: []
@@ -32,9 +32,6 @@ switch(action.type) {
         
     default: return state 
 }
-  
-
-
 
 }
 
