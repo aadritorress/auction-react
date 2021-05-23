@@ -67,6 +67,19 @@ body {
 }
 .button:hover { color: rgb(255, 136, 0); } 
 
+.action-button {
+  font-size: 0.6rem;
+  height: 2rem;
+  text-align: center; 
+  line-height: 0rem;
+  color: rgb(255, 255, 255);
+  background: rgb(121, 41, 17);
+  border-color: rgb(255, 255, 255);
+  border-radius: 100px;
+  /* border: none;  */
+  cursor: pointer;
+}
+
 .button-home {
   box-sizing: border-box;
     width: 15em;

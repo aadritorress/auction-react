@@ -27,11 +27,33 @@ class Items extends Component {
         const items = this.props.items;
         return (
       <div>
+                 <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="200" height="200"></img>
+           <br></br>
+            <button className="button" onClick={this.handleHome}> Home </button>
             <p> All Items</p>
-            {items && items.length > 0 ? items.map((item, idx) => ( <div key={idx}>{item.id}</div>)) : ''}
+            {items.map((item, index) => 
+            ( 
+                <div key={index}>
+                <br></br>
+                <h3>{item.name}</h3>
+                <br></br>
+                <img src={item.picture} alt='' width="100" height="100" ></img>
+                <br></br>
+                <h4>Price: {item.initial_price}</h4>
+                <h4>Condition: {item.condition}</h4>
+                <h4>City: {item.city}</h4>
+                <h4>Item sold: {item.sold ? 'Yes' : "No"}
+                <br></br>
+                <br></br>
+                <button className="action-button"> Bid </button></h4>
+                <br></br>
+                </div>
+            ))}
+                <br></br>
+                <button className="button" onClick={this.handleHome}> Home </button>
          {/* {getItems(useDispatch())} */}
         {/* {dispatchSetItem(useDispatch())} */}
-            <button className="button" onClick={this.handleHome}> Home </button>
+        <br></br>
         </div>
     ) 
     }  

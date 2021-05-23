@@ -1,6 +1,6 @@
 
-import React, {useEffect, useState} from 'react'
-import {useDispatch} from 'react-redux'
+import React, {useState} from 'react'
+// import {useDispatch} from 'react-redux'
 import {addItem} from '../actions/itemActions' 
 import {connect} from 'react-redux';
 
