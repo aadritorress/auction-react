@@ -1,14 +1,48 @@
 
-import React from 'react'
-import { addItem } from '../actions/itemActions' 
+import React, {useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux'
+import {addItem} from '../actions/itemActions' 
+import {connect} from 'react-redux';
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+            addItem: (item) => dispatch(addItem(item)),
+    };
+};
 
 const ItemForm = (props) => {
-     const dispatch = useDispatch()
+    const [name, setName] = useState('');
+    const [picture, setPicture] = useState('');
+    const [initial_price, setInitial_price] = useState('');
+    const [condition, setCondition] = useState('');
+    const [city, setCity] = useState('');
+    const [errors, setErrors] = useState([]);
 
-     const handleHome = () =>{ 
-  props.history.push("/HomePage");
-  }
+    const handleHome = () => { 
+        props.history.push("/HomePage");
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setErrors([]);
+        const item = {
+            name, picture, initial_price, condition, city, sold: false, user_id: 20, charity_id: 4
+        };
+
+        const errors = [];
+
+        for (const property in item){
+            if (property !== 'sold' && !item[property]){
+                errors.push(`${property} cannot be blank`);
+            }
+        }
+        if (errors.length > 0){
+            //display the errors
+            setErrors(errors);
+            return;
+        }
+        props.addItem(item);       
+    }
 
 
   return (
@@ -17,18 +51,17 @@ const ItemForm = (props) => {
             <br></br>
             <button className="button" onClick={handleHome}> Home </button>
             <h3>Donation Form</h3>
-             <form className = "form-card" onSubmit={(e)=>{
-                 e.preventDefault()
-                 addItem(e, dispatch, props.history)}}>
-             <input type="text" name="name" placeholder="name"></input>
+            {errors && errors.length > 0 ? errors.map((error, idx) => (<div key={idx}>{error}</div>)) : ''}
+             <form className = "form-card" onSubmit={handleSubmit}>
+             <input type="text" value={name} onChange={e => setName(e.target.value)} name="name" placeholder="name"></input>
              <br></br>
-              <input type='text' placeholder="image" name='image'/>
+              <input type='text' value={picture} onChange={e => setPicture(e.target.value)} placeholder="image" name='image'/>
               <br></br>
-             <input type="text" name="initial_price" placeholder="price" ></input>
+             <input type="text" value={initial_price} name="initial_price" onChange={e => setInitial_price(e.target.value)}  placeholder="price" ></input>
              <br></br>
-             <input type="text" name="condition" placeholder="condition" ></input>
+             <input type="text" value={condition} name="condition" onChange={e => setCondition(e.target.value)} placeholder="condition" ></input>
              <br></br>
-             <input type="text" name="city" placeholder="city" ></input>
+             <input type="text" value={city} name="city" onChange={e => setCity(e.target.value)} placeholder="city" ></input>
              <br></br>
              <br></br>
              <button className="button" type="submit">Add Item</button>
@@ -39,7 +72,7 @@ const ItemForm = (props) => {
     )
 }
 
-export default ItemForm
+export default connect(null, mapDispatchToProps)(ItemForm)
 
 
 // import './App.css';

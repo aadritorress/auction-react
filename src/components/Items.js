@@ -1,25 +1,43 @@
-import React from 'react'
-// import { getItems } from '../actions/itemActions' 
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import { getItems } from '../actions/itemActions' 
 // import { useDispatch } from 'react-redux'
 
 
-const Items = (props) => {
+const mapStateToProps = (state) => {
+    return { items: state.items.items};
+};
 
-  const handleHome = () =>{ 
-  props.history.push("/HomePage");
-  }
+const mapDispatchToProps = (dispatch) => {
+    return {
+            getItems: () => dispatch(getItems()),
+    }
+};
 
-  return (
+class Items extends Component { 
+    handleHome = () =>{ 
+        this.props.history.push("/HomePage");
+    }
+
+    componentDidMount() {
+        this.props.getItems();
+    }
+
+    render() {
+        const items = this.props.items;
+        return (
       <div>
             <p> All Items</p>
+            {items && items.length > 0 ? items.map((item, idx) => ( <div key={idx}>{item.id}</div>)) : ''}
          {/* {getItems(useDispatch())} */}
         {/* {dispatchSetItem(useDispatch())} */}
-            <button className="button" onClick={handleHome}> Home </button>
+            <button className="button" onClick={this.handleHome}> Home </button>
         </div>
-    )
+    ) 
+    }  
 }
 
-export default Items
+export default connect(mapStateToProps, mapDispatchToProps)(Items);
 
 
 

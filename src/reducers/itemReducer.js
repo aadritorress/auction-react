@@ -12,7 +12,7 @@ switch(action.type) {
         // console.log("hitting reducer")
         return {
             ...state,
-             items: [...state.items, ...action.payload]
+             items: action.payload
         }  
     case "ADD_ITEM":
         return {
@@ -32,7 +32,7 @@ switch(action.type) {
         
     default: return state 
 }
-
+  
 
 
 

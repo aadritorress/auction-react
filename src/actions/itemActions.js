@@ -1,6 +1,6 @@
 
 
-export const getItems = () =>{
+export const getItems = () => async (dispatch) => {
   fetch('http://localhost:3000/api/v1/items', {
   method: "GET",
   headers: {
@@ -10,26 +10,16 @@ export const getItems = () =>{
     }
   })
   .then(resp => resp.json())
-  .then(items => 
+  .then(items => {
     // console.log(items)
-    dispatchSetItem(items)
-  )
+    const payload = items;
+    dispatch({type: "SET_ITEM", payload});
+    //dispatchSetItem(items)
+  });
 }
-
-export const addItem = (e) => {
-    e.preventDefault()
-
-    let newItem = { 
-      name: e.target[0].value, 
-      picture: e.target[1].value,
-      initial_price: e.target[2].value,
-      condition: e.target[3].value,
-      city: e.target[4].value,
-      sold: false,
-      // user_id: this.props.user.id
-    }
-    console.log(newItem)
-
+  
+export const addItem = (item) => async(dispatch, getState) => {
+    // console.log(item)
     fetch("http://localhost:3000/api/v1/items", {
       method: "POST",
       headers: {
@@ -37,14 +27,14 @@ export const addItem = (e) => {
         'Accept': 'application/json',
         'Authorization': `Bearer ${localStorage.token}`
       },
-      body: JSON.stringify(newItem)
+      body: JSON.stringify(item)
     })
       .then(resp => resp.json())
-      .then(item => 
+      .then((item) => {
+        const payload = item;
+        dispatch({type: "ADD_ITEM", payload})
         // console.log(item)
-      dispatchAddItem(item)
-      )
-    e.target.reset();
+      })
   }
  
 export const dispatchSetItem = items =>({
