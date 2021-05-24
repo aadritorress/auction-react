@@ -18,6 +18,7 @@ props.history.push("/ItemForm");
 }
 
 const handleLogOut = () => {
+localStorage.clear()
 props.history.push("/login");
 }
 

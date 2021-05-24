@@ -29,7 +29,7 @@ class Items extends Component {
     render() {
         // const bids = this.props.bids
         const items = this.props.items;
-        console.log(items)
+        // console.log(items)
         // debugger
         return (
       <div >
