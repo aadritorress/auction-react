@@ -26,7 +26,7 @@ const ItemForm = (props) => {
         e.preventDefault();
         setErrors([]);
         const item = {
-            name, image, price, condition, city, sold: false, user_id: 37, charity_id: 3
+            name, image, price, condition, city, sold: false, user_id: 41, charity_id: 3
         };
 
         const errors = [];

@@ -17,19 +17,20 @@ body {
   font-family: 'Source Code Pro', monospace;
 } */
 
+
 .column {
   float: left;
-  width: 200px;
-  height: 1200x;
+  width: 25%;
+  /* height: 1200x; */
   padding: 0 10px;
 }
 
 .row {margin: 0 -5px;}
-/* .row:after {
+.row:after {
   content: "";
   display: table;
   clear: both;
-} */
+}
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
@@ -106,6 +107,20 @@ body {
   background: rgb(236, 70, 19);
   border-color: rgb(255, 255, 255);
   border-radius: 30px;
+  border: none; 
+  cursor: pointer;
+}
+
+.sold-button {
+  font-size: 0.6rem;
+  height: 2rem;
+  width: 50px;
+  text-align: center; 
+  line-height: 0rem;
+  color: rgb(255, 255, 255);
+  background: rgb(177, 87, 60);
+  border-color: rgb(255, 255, 255);
+  border-radius: 100px;
   border: none; 
   cursor: pointer;
 }

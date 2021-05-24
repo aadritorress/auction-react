@@ -3,7 +3,7 @@ export const handleLogin = (e, dispatch, history) => {
      
       let user = {
         name: e.target[0].value,
-        password: e.target[1].value
+        password: e.target[1].value,
       }
        let postReq = {
          method: "POST",
@@ -19,9 +19,17 @@ export const handleLogin = (e, dispatch, history) => {
          // localStorage.token = data.token 
          localStorage.setItem("token", data.token)
          dispatch({type: "LOG_IN", user: data})
-        {data.token ? history.push("/HomePage") : history.push("/login") }
+        {data.token ? history.push("/HomePage") : history.push("/login") 
+        // console.log(user)
+       }
        })
       }
+
+
+
+
+
+
 
 // export const handleLogOut = () => {
 //  handleLogOut = () => {

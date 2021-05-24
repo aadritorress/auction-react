@@ -11,7 +11,7 @@ export const getItems = () => async (dispatch) => {
   })
   .then(resp => resp.json())
   .then(items => {
-    // console.log(items)
+    console.log(items)
     const payload = items;
     dispatch({type: "SET_ITEM", payload});
     //dispatchSetItem(items)
@@ -47,9 +47,5 @@ type: "ADD_ITEM",
 payload: item
 })
 
-export const dispatchEditSold = item =>({
-type: "EDIT_SOLD",
-payload: item
-})
 
    

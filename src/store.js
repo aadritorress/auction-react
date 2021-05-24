@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createStore, applyMiddleware, combineReducers, compose  } from 'redux'
 import itemReducer from './reducers/itemReducer'
 import loginReducer from './reducers/loginReducer'
 import userReducer from './reducers/userReducer'
@@ -11,7 +11,7 @@ const rootReducer = combineReducers ({
   user: userReducer, 
   // bid: bidReducer
 });
-
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 export default store 

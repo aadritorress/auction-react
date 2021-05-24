@@ -21,17 +21,26 @@ const handleLogOut = () => {
 props.history.push("/login");
 }
 
+const handleCharity = () =>{ 
+props.history.push("/Charity");
+}
+
 
   return (
     <div>
        <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="200" height="200"></img>
+      <br></br>
+      <button className="sold-button" onClick={handleCharity}> About us </button>
+      <br></br>
+      
       <p> Home Page </p>
+
       <button className="button" onClick={handleProfile}> My Profile </button>
       
       <button className="button" onClick={handleItems}> Search Items </button>
      
       <button className="button" onClick={handleOffer}> Offer Item </button>
-   <br></br>
+      <br></br>
       <button className="button" onClick={handleLogOut}> Log Out </button>
      </div>
       );

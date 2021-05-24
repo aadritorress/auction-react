@@ -7,6 +7,7 @@ import Items from './components/Items'
 import Profile from './components/Profile'
 import ItemForm from './components/ItemForm'
 import Signup from './components/Signup'
+import Charity from './components/Charity'
 
 
 const Routes = (props) => {
@@ -22,6 +23,7 @@ const Routes = (props) => {
                     <Route path="/Items" exact component = {props => <Items {...props}/>}/>
                     <Route path="/Profile" exact component = {props => <Profile {...props}/>}/>
                     <Route path="/ItemForm" exact component = {props => <ItemForm {...props}/>}/>
+                    <Route path="/Charity" exact component = {props => <Charity {...props}/>}/>
                 </Switch>
             </Router>
         </div>

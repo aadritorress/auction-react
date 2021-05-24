@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions' 
-// import { getBids } from '../actions/bidActions' 
-
+// import { getBids } from '../actions/bidActions'  
 // import { useDispatch } from 'react-redux'
 
 
 const mapStateToProps = (state) => {
+
     return { items: state.items.items, };
 };
 
@@ -24,12 +24,12 @@ class Items extends Component {
     
     componentDidMount() {
         this.props.getItems();
-        // this.props.getBids();
     }
     
     render() {
         // const bids = this.props.bids
         const items = this.props.items;
+        console.log(items)
         // debugger
         return (
       <div >
