@@ -21,9 +21,33 @@ export const signUp = (user) => async (dispatch) => {
     })
 }
 
+
+export const getUser = () => async (dispatch) => {
+    fetch('http://localhost:3000/api/v1/users', {
+        method: "GET",
+        headers: {
+            'content-type': 'application/json',
+            'accept': 'application/json',
+            'Authorization': `Bearer ${localStorage.token}`
+        },
+    })
+    .then (resp => resp.json())
+    .then(user => {
+        const payload = user;
+        console.log(user)
+        dispatch({type: "GET_USER", payload})
+    })
+}
+
+
 export const dispatchCreateUser = user =>({
 type: "CREATE_USER",
 payload: user
+})
+
+export const dispatchGetUser = user => ({
+    type: "GET_USER", 
+    payload: user 
 })
 
 

@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions' 
+// import { getBids } from '../actions/bidActions' 
+
 // import { useDispatch } from 'react-redux'
 
 
 const mapStateToProps = (state) => {
-    return { items: state.items.items};
+    return { items: state.items.items, };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-            getItems: () => dispatch(getItems()),
+        getItems: () => dispatch(getItems()),
+        // getBids: () => dispatch(getBids()),
     }
 };
 
@@ -18,22 +21,26 @@ class Items extends Component {
     handleHome = () =>{ 
         this.props.history.push("/HomePage");
     }
-
+    
     componentDidMount() {
         this.props.getItems();
+        // this.props.getBids();
     }
-
+    
     render() {
+        // const bids = this.props.bids
         const items = this.props.items;
+        // debugger
         return (
-      <div>
+      <div >
+          <div >
          <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="200" height="200"></img>
            <br></br>
             <button className="button" onClick={this.handleHome}> Home </button>
             <p> All Items</p>
             {items.map((item, index) => 
             ( 
-                <div key={index}>
+                <div className="item-card"  key={index}>
                 <br></br>
                 <h3>{item.name}</h3>
                 <br></br>
@@ -47,11 +54,13 @@ class Items extends Component {
                 <br></br>
                 <button className="action-button"> Bid </button></h4>
                 <br></br>
+                <br></br>
                 </div>
             ))}
                 <br></br>
                 <button className="button" onClick={this.handleHome}> Home </button>
         <br></br>
+        </div>
         </div>
     ) 
     }  

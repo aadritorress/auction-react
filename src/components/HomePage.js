@@ -27,14 +27,11 @@ props.history.push("/login");
        <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="200" height="200"></img>
       <p> Home Page </p>
       <button className="button" onClick={handleProfile}> My Profile </button>
-      <br></br>
-      <br></br>
+      
       <button className="button" onClick={handleItems}> Search Items </button>
-      <br></br>
-      <br></br>
+     
       <button className="button" onClick={handleOffer}> Offer Item </button>
-      <br></br>
-      <br></br>
+   <br></br>
       <button className="button" onClick={handleLogOut}> Log Out </button>
      </div>
       );

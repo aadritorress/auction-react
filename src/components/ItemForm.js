@@ -26,7 +26,7 @@ const ItemForm = (props) => {
         e.preventDefault();
         setErrors([]);
         const item = {
-            name, image, price, condition, city, sold: false, user_id: 26, charity_id: 1
+            name, image, price, condition, city, sold: false, user_id: 37, charity_id: 3
         };
 
         const errors = [];
@@ -41,7 +41,8 @@ const ItemForm = (props) => {
             setErrors(errors);
             return;
         }
-        props.addItem(item);       
+        props.addItem(item);   
+        props.history.push(("/Items")) 
     }
 
 
@@ -50,9 +51,9 @@ const ItemForm = (props) => {
             <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="250" height="250"></img>
             <br></br>
             <button className="button" onClick={handleHome}> Home </button>
-            <h3>Donation Form</h3>
             {errors && errors.length > 0 ? errors.map((error, idx) => (<div key={idx}>{error}</div>)) : ''}
              <form className = "form-card" onSubmit={handleSubmit}>
+                <h3>Donation Form</h3>
              <input type="text" value={name} onChange={e => setName(e.target.value)} name="name" placeholder="name"></input>
              <br></br>
               <input type='text' value={image} onChange={e => setImage(e.target.value)} placeholder="image" name='image'/>
@@ -64,10 +65,11 @@ const ItemForm = (props) => {
              <input type="text" value={city} name="city" onChange={e => setCity(e.target.value)} placeholder="city" ></input>
              <br></br>
              <br></br>
-             <button className="button" type="submit">Add Item</button>
+             <button className="button" type="submit">Add Item</ button>
              <br></br>
              <br></br>
              </form>
+            {/* {props.history.push(("/Items"))} */}
         </div>
     )
 }

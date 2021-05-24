@@ -1,26 +1,45 @@
 
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { getUser } from '../actions/userAction'
 
-import React from 'react'
 
-const Profile = (props) => {
 
- const handleHome = () =>{ 
-  props.history.push("/HomePage");
+const mapStateToProps = (state) => {
+  return { user: state.user};
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getUser: () => dispatch(getUser()),
+    // getUser: (user) => dispatch(getUser(user)),
+  }
+};
+
+class Profile extends Component {
+  handleHome = () =>{ 
+  this.props.history.push("/HomePage");
   }
 
-  return (
+  componentDidMount() {
+    this.props.getUser();
+  }
+
+  render() {
+// const user = this.props.user
+// array with all users 
+    return (
     <div>
-      <p>Profile Page</p>
-      <button className="button" onClick={handleHome}> Home </button>
-      
-
-
-
+    <p>Profile Page</p>
+    <button className="button" onClick={this.handleHome}> Home </button>
+    {/* <h3>{user.name}</h3> */}
     </div>
-  )
+    )
+  }
 }
 
-export default Profile
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+
 
 
 

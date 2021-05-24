@@ -1,6 +1,6 @@
 
 const initialState = {
-    user: ''
+    user: []
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -11,7 +11,12 @@ case "CREATE_USER":
         ...state, 
         user: [...state.user, action.payload]
     }
-    default: return user 
+    case "GET_USER":
+    return {
+        ...state, 
+        user: [...state.user, action.payload]
+    }
+    default: return state
     }
 }
 

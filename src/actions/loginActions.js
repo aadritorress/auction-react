@@ -1,6 +1,6 @@
   
 export const handleLogin = (e, dispatch, history) => {
-    
+     
       let user = {
         name: e.target[0].value,
         password: e.target[1].value

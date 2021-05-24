@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+// import { Redirect } from 'react-router'
 import {signUp} from '../actions/userAction'
 import {connect} from 'react-redux'
 
@@ -17,6 +17,10 @@ const Signup = (props) => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    // const handleLogin = () => {
+    //     props.history.push("/login");
+    // }
    
      const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,6 +28,7 @@ const Signup = (props) => {
             name, email, username, password
         };
         props.signUp(user);
+        props.history.push(("/login")) 
     }
 
     return (
