@@ -50,7 +50,9 @@ const ItemForm = (props) => {
       <div>
             <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="250" height="250"></img>
             <br></br>
+
             <button className="button" onClick={handleHome}> Home </button>
+            
             {errors && errors.length > 0 ? errors.map((error, idx) => (<div key={idx}>{error}</div>)) : ''}
              <form className = "form-card" onSubmit={handleSubmit}>
                 <h3>Donation Form</h3>

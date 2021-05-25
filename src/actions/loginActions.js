@@ -18,6 +18,7 @@ export const handleLogin = (e, dispatch, history) => {
        .then(data => {
          // localStorage.token = data.token 
          localStorage.setItem("token", data.token)
+   
          dispatch({type: "LOG_IN", user: data})
         {data.token ? history.push("/HomePage") : history.push("/login") 
         // console.log(user)

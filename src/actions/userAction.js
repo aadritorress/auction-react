@@ -40,15 +40,53 @@ export const getUser = () => async (dispatch) => {
 }
 
 
-export const dispatchCreateUser = user =>({
-type: "CREATE_USER",
-payload: user
-})
+export const deleteUser = (user) => async (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${user.id}`, {
+        method: "DELETE",
+    })
+        const payload = user;
+        console.log(user)
+        dispatch({type: "DELETE_USER", payload})
+}
 
-export const dispatchGetUser = user => ({
-    type: "GET_USER", 
-    payload: user 
-})
+
+
+export const editUser = (user) => async (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${user.id}`, {
+    method: "PATCH",
+    headers: {
+    'content-type': 'application/json',
+    'accept': 'application/json',
+    'Authorization': `Bearer ${localStorage.token}`
+        },
+    body: JSON.stringify({user})
+    })
+    .then (resp => resp.json())
+    .then(user => {
+        console.log(user)
+        const payload = user;
+        dispatch({type: "EDIT_USER", payload})
+    })
+}
+
+
+
+
+
+
+
+
+
+
+// export const dispatchCreateUser = user =>({
+// type: "CREATE_USER",
+// payload: user
+// })
+
+// export const dispatchGetUser = user => ({
+//     type: "GET_USER", 
+//     payload: user 
+// })
 
 
 

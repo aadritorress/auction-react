@@ -7,7 +7,7 @@ const initialState = {
 const loginReducer = (state = initialState, action) => {
 switch(action.type){
     case "LOG_IN":
-        // console.log(action)
+   
     return {
         ...state,
         user: action.user.user,

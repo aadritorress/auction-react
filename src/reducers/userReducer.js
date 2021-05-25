@@ -16,6 +16,16 @@ case "CREATE_USER":
         ...state, 
         user: [...state.user, action.payload]
     }
+    case 'EDIT_USER':
+      return {
+        ...state, 
+        user: [...state.user, action.payload]
+      }   
+    case 'DELETE_USER':
+      return {
+          user: state.user.filter(currentUser => currentUser !== action.payload)
+        }
+
     default: return state
     }
 }

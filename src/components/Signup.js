@@ -42,7 +42,7 @@ const Signup = (props) => {
               <br></br>
              <input required type="text" value={username} name="username" onChange={e => setUsername(e.target.value)}  placeholder="username" ></input>
              <br></br>
-             <input required type="text" value={password} name="password" onChange={e => setPassword(e.target.value)} placeholder="password" ></input>
+             <input required type="password" value={password} name="password" onChange={e => setPassword(e.target.value)} placeholder="password" ></input>
              <br></br>
              <button className="button" type="submit">Create an account</button>
              <br></br>
