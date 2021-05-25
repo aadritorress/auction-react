@@ -36,16 +36,38 @@ export const addItem = (item) => async(dispatch, getState) => {
         // console.log(item)
       })   
   }
-  
-export const dispatchSetItem = items =>({
-type: "SET_ITEM",
-payload: items
-})   
 
-export const dispatchAddItem = item =>({
-type: "ADD_ITEM",
-payload: item
-})
+
+export const editItem = (item) => async (dispatch) => {
+      item.sold = !item.sold 
+    fetch(`http://localhost:3000/api/v1/items/${item.id}`, {
+    method: "PATCH",
+    headers: {
+    'content-type': 'application/json',
+    'accept': 'application/json',
+    'Authorization': `Bearer ${localStorage.token}`
+        },
+    body: JSON.stringify({item})
+    })
+    .then (resp => resp.json())
+    .then(item => {
+        // console.log(item)
+        const payload = item;
+        dispatch({type: "EDIT_SOLD", payload})
+    })
+}
+
+
+  
+// export const dispatchSetItem = items =>({
+// type: "SET_ITEM",
+// payload: items
+// })   
+
+// export const dispatchAddItem = item =>({
+// type: "ADD_ITEM",
+// payload: item
+// })
 
 
    

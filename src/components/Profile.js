@@ -2,19 +2,22 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { deleteUser, editUser } from '../actions/userAction'
-// import { getUser } from '../actions/userAction'
-// import { handleLogin } from '../actions/loginActions'
+import { editItem } from '../actions/itemActions'
+
 
 
 const mapStateToProps = (state) => {
-  // console.log(state.loginState.user)
-  return { user: state.loginState.user};
+  return { 
+    user: state.loginState.user, 
+    item: state.items.items,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteUser: user => dispatch(deleteUser(user)),
-    editUser: user => dispatch(editUser(user))
+    editUser: user => dispatch(editUser(user)),
+    editItem: item => dispatch(editItem(item))
   }
 };
 
@@ -29,7 +32,7 @@ class Profile extends Component {
     this.props.history.push("/HomePage");
   }
 
-handleEdit = (e) => {
+  handleEdit = (e) => {
   e.preventDefault();
     console.log('clicked')
     this.props.editUser(this.props.user);
@@ -43,6 +46,10 @@ handleEdit = (e) => {
     const value = e.target.value;
     currentUser[property] = value;
     this.setState({user: currentUser});
+  }
+
+  handleSold = (item) => {
+  this.props.editItem(item);
   }
 
   handleDelete = () => {
@@ -73,11 +80,13 @@ const showForm = this.state.showForm;
     <h4>Name: {user.name}</h4>
     <h4>Email: {user.email}</h4>
     <h4>Username: {user.username}</h4>
-    <button className="button" onClick={() => this.showProfileForm()}> Edit your Information </button>
+    <button className="button" onClick={() => this.showProfileForm()}> Edit Account </button>
 
       {showForm ? 
       <form onSubmit={this.handleEdit}>
         <input type="text" name="name" value={user.name} onChange={this.changeUser}/>
+         <input type="text" name="email" value={user.email} onChange={this.changeUser}/>
+          <input type="text" name="username" value={user.username} onChange={this.changeUser}/>
         <button onClick={this.handleEdit}>Save Changes</button>
       </form> : ''}
 
@@ -88,13 +97,11 @@ const showForm = this.state.showForm;
     <div className="item-card" key={index}>
     <h4>{item.name}</h4>
     <img src={item.image} alt='' width="100" height="100" ></img>
-    <br></br>
-    <button className="sold-button"> Edit </button>
     <h6>Price: {item.price}</h6>
     <h6>Condition: {item.condition}</h6>
     <h6>City: {item.city}</h6>
     <h6>Item sold: {item.sold ? 'Yes' : "No"}</h6>
-    <button className="sold-button"> {item.sold ? 'Available' : "Sold"} </button>
+    <button onClick={() => this.handleSold(item)} className="sold-button"> {item.sold ? 'Available' : "Sold"} </button>
     <br></br>
     <br></br>
     </div>
@@ -107,20 +114,3 @@ const showForm = this.state.showForm;
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
 
-
-
-
-// import './App.css';
-// import React from 'react';
-
-
-
-// export default function Profile () {
-
-
-//     return (
-//     <div >
-//       <h1> Profile Page </h1>
-//     </div>
-//   );
-//   }

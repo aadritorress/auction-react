@@ -22,7 +22,7 @@ switch(action.type) {
 
     case "EDIT_SOLD":
     let updatedItem = action.payload
-    updatedItem.sold = !updatedItem.sold
+    // updatedItem.sold = !updatedItem.sold
         return {
             ...state, 
             items: state.items.map(item => item.id === updatedItem.id ? updatedItem : item)

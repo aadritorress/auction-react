@@ -63,7 +63,7 @@ export const editUser = (user) => async (dispatch) => {
     })
     .then (resp => resp.json())
     .then(user => {
-        console.log(user)
+        // console.log(user)
         const payload = user;
         dispatch({type: "EDIT_USER", payload})
     })

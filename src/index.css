@@ -67,13 +67,15 @@ body {
 
 .button {
   font-size: 0.6rem;
-  height: 2.3rem;
+  height: 2rem;
+  width: 5rem;
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(224, 71, 24);
-  border-radius: 25px;
+  background: rgb(121, 41, 17);
+  border-radius: 32px;
   margin: 13px;
+  /* opacity: 0.50; */
   border: none; 
   cursor: pointer;
 }
