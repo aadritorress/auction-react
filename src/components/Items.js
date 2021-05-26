@@ -79,13 +79,14 @@ class Items extends Component {
                 <h4>Item sold: {item.sold ? 'Yes' : "No"}</h4>
                 {/* Bids */}
                 {item.bids.map((bid, index) => (<div key={index}>
-                <h4>Current Price: {bid.amount}</h4>
+                <h4>Current Price: ${bid.amount}</h4>
                 </div>))}
+                {item.sold ? 'ITEM SOLD' :
                 <form onSubmit={(e) => this.handleSubmit(e, item)} >
                 {/* <form > */}
                 <input type="number"name="amount"placeholder="amount"></input>
                 <button type="submit"  className="action-button"> Bid </button>
-                </form>
+                </form>}
                 <br></br>
                 </div>
                 ))}
