@@ -55,7 +55,7 @@ class Profile extends Component {
   handleDelete = () => {
     console.log('clicked')
   this.props.deleteUser(this.props.user);
-  this.props.history.push("/login");
+  this.props.history.push("/bye");
   }
 
   componentDidMount() {

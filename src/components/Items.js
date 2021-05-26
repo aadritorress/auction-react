@@ -76,7 +76,7 @@ class Items extends Component {
                 <h4>Condition: {item.condition}</h4>
                 <h4>City: {item.city}</h4>
                 <h4>Initial Price: {item.price}</h4>
-                <h4>Item sold: {item.sold ? 'Yes' : "No"}</h4>
+                {/* <h4>Item sold: {item.sold ? 'Yes' : "No"}</h4> */}
                 {/* Bids */}
                 {item.bids.map((bid, index) => (<div key={index}>
                 <h4>Current Price: ${bid.amount}</h4>
@@ -85,6 +85,7 @@ class Items extends Component {
                 <form onSubmit={(e) => this.handleSubmit(e, item)} >
                 {/* <form > */}
                 <input type="number"name="amount"placeholder="amount"></input>
+                <br></br>
                 <button type="submit"  className="action-button"> Bid </button>
                 </form>}
                 <br></br>

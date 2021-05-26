@@ -17,6 +17,12 @@ body {
   font-family: 'Source Code Pro', monospace;
 } */
 
+input {
+  padding: 5px;
+  margin:5px 0;
+  border: 2px solid rgb(235, 162, 5);
+  border-radius: 32px;
+}
 
 .column {
   float: left;
@@ -72,14 +78,15 @@ body {
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(121, 41, 17);
+  background: rgb(235, 162, 5);
   border-radius: 32px;
   margin: 13px;
   /* opacity: 0.50; */
   border: none; 
   cursor: pointer;
 }
-.button:hover { color: rgb(255, 136, 0); } 
+.button:hover { 
+background:rgb(255, 187, 0) } 
 
 .btn-toolbar {
   margin: 13px;
@@ -106,12 +113,15 @@ body {
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(236, 70, 19);
+  background: rgb(235, 162, 5);
   border-color: rgb(255, 255, 255);
   border-radius: 30px;
   border: none; 
   cursor: pointer;
 }
+/* .signup-button:hover { height: 2.2rem; width: 110px;}  */
+.signup-button:hover {background:rgb(255, 187, 0)}
+
 
 .sold-button {
   font-size: 0.6rem;
@@ -120,12 +130,15 @@ body {
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(177, 87, 60);
+  background: rgb(235, 162, 5);
   border-color: rgb(255, 255, 255);
   border-radius: 100px;
   border: none; 
   cursor: pointer;
 }
+.sold-button:hover { 
+background:rgb(255, 187, 0) } 
+
 
 .button-home {
   box-sizing: border-box;

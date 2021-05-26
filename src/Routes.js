@@ -8,6 +8,7 @@ import Profile from './components/Profile'
 import ItemForm from './components/ItemForm'
 import Signup from './components/Signup'
 import Charity from './components/Charity'
+import Bye from './components/Bye'
 
 
 const Routes = (props) => {
@@ -24,6 +25,7 @@ const Routes = (props) => {
                     <Route path="/Profile" exact component = {props => <Profile {...props}/>}/>
                     <Route path="/ItemForm" exact component = {props => <ItemForm {...props}/>}/>
                     <Route path="/Charity" exact component = {props => <Charity {...props}/>}/>
+                     <Route path="/Bye" exact component = {props => <Bye {...props}/>}/>
                 </Switch>
             </Router>
         </div>
