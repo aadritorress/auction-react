@@ -1,4 +1,4 @@
- 
+    
 
 export const getItems = () => async (dispatch) => {
   fetch('http://localhost:3000/api/v1/items', {
@@ -11,15 +11,13 @@ export const getItems = () => async (dispatch) => {
   })
   .then(resp => resp.json())
   .then(items => {
-    console.log(items)
+    // console.log(items)
     const payload = items;
     dispatch({type: "SET_ITEM", payload});
-    //dispatchSetItem(items)
   });
-}
+}   
   
 export const addItem = (item) => async(dispatch, getState) => {
-    // console.log(item)
     fetch("http://localhost:3000/api/v1/items", {
       method: "POST",
       headers: {
@@ -33,7 +31,6 @@ export const addItem = (item) => async(dispatch, getState) => {
       .then((item) => {
         const payload = item;
         dispatch({type: "ADD_ITEM", payload})
-        // console.log(item)
       })   
   }
 
@@ -51,23 +48,9 @@ export const editItem = (item) => async (dispatch) => {
     })
     .then (resp => resp.json())
     .then(item => {
-        // console.log(item)
         const payload = item;
         dispatch({type: "EDIT_SOLD", payload})
     })
 }
 
 
-  
-// export const dispatchSetItem = items =>({
-// type: "SET_ITEM",
-// payload: items
-// })   
-
-// export const dispatchAddItem = item =>({
-// type: "ADD_ITEM",
-// payload: item
-// })
-
-
-   

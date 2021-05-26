@@ -4,6 +4,13 @@ import React, {useState} from 'react'
 import {addItem} from '../actions/itemActions' 
 import {connect} from 'react-redux';
 
+const mapStateToProps = (state) => {
+    // debugger 
+    return { 
+        user: state.loginState.user
+    };
+};
+
 const mapDispatchToProps = (dispatch) => {
     return {
             addItem: (item) => dispatch(addItem(item)),
@@ -26,7 +33,7 @@ const ItemForm = (props) => {
         e.preventDefault();
         setErrors([]);
         const item = {
-            name, image, price, condition, city, sold: false, user_id: 41, charity_id: 4
+            name, image, price, condition, city, sold: false, user_id: props.user.id, charity_id: 7
         };
 
         const errors = [];
@@ -76,7 +83,7 @@ const ItemForm = (props) => {
     )
 }
 
-export default connect(null, mapDispatchToProps)(ItemForm)
+export default connect(mapStateToProps, mapDispatchToProps)(ItemForm)
 
 
 // import './App.css';

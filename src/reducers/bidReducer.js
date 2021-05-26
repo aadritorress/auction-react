@@ -1,3 +1,6 @@
+
+
+
 const initialState = {
     bids: []
 }   
@@ -7,11 +10,17 @@ switch(action.type) {
     case "GET_BIDS":
         return {
             ...state,
-             bids: [...state.bids, action.payload]
+             bids: action.payload
+        }  
+    case "ADD_BID":
+        return {
+            ...state, 
+            bids: [...state.bids, action.payload] 
         }  
     default: return state 
-}
-}
+    }
+}     
 
 export default bidReducer
 
+       

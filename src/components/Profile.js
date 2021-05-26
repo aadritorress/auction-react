@@ -68,6 +68,7 @@ class Profile extends Component {
 
   render() {
 const user = this.props.user
+console.log('user:', user)
 const showForm = this.state.showForm;
 // debugger 
 // array with all users 
@@ -85,9 +86,12 @@ const showForm = this.state.showForm;
       {showForm ? 
       <form onSubmit={this.handleEdit}>
         <input type="text" name="name" value={user.name} onChange={this.changeUser}/>
+         <br></br>
          <input type="text" name="email" value={user.email} onChange={this.changeUser}/>
+          <br></br>
           <input type="text" name="username" value={user.username} onChange={this.changeUser}/>
-        <button onClick={this.handleEdit}>Save Changes</button>
+        <br></br>
+        <button className="sold-button" onClick={this.handleEdit}>Save</button>
       </form> : ''}
 
 

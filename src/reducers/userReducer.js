@@ -1,7 +1,7 @@
 
 const initialState = {
     user: []
-}      
+}        
 
 const userReducer = (state = initialState, action) => {
 

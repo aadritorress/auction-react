@@ -3,7 +3,7 @@
 
 export const signUp = (user) => async (dispatch) => {
 
-    
+      
     fetch('http://localhost:3000/api/v1/users', {
         method: "POST",
         headers: {

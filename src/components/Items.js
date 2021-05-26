@@ -1,35 +1,62 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions' 
-// import { getBids } from '../actions/bidActions'  
+import { getBids, addBid } from '../actions/bidActions'  
 // import { useDispatch } from 'react-redux'
 
 
 const mapStateToProps = (state) => {
-
-    return { items: state.items.items, };
+    // debugger
+    return { 
+        items: state.items.items, 
+        bids: state.bids.bids,
+        user: state.loginState.user
+    };
 };
+
+
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
         getItems: () => dispatch(getItems()),
-        // getBids: () => dispatch(getBids()),
+        getBids: () => dispatch(getBids()),
+        addBid: (bid) => dispatch(addBid(bid))
     }
 };
+
+// bidState = useSelector(state => state) 
 
 class Items extends Component { 
     handleHome = () =>{ 
         this.props.history.push("/HomePage");
     }
-    
+
+
+    handleSubmit = (e, item) => {
+    e.preventDefault();
+    // console.log(e.target[0].value)
+        // debugger
+    let bid = 
+    { 
+        amount: e.target[0].value, 
+        item_id: item.id,
+        user_id: this.props.user.id
+    }
+    // console.log(bid)
+    // console.log('user:', this.props.user)
+    // console.log('item:', item)
+    this.props.addBid(bid); 
+    }
+
     componentDidMount() {
         this.props.getItems();
+        this.props.getBids();
     }
     
     render() {
-        // const bids = this.props.bids
         const items = this.props.items;
-        // console.log(items)
+        // console.log('items:', items)
         // debugger
         return (
       <div >
@@ -46,17 +73,22 @@ class Items extends Component {
                 <br></br>
                 <img src={item.image} alt='' width="100" height="100" ></img>
                 <br></br>
-                <h4>Current Price: {item.price}</h4>
                 <h4>Condition: {item.condition}</h4>
                 <h4>City: {item.city}</h4>
-                <h4>Item sold: {item.sold ? 'Yes' : "No"}
-                <br></br>
-                <br></br>
-                <button className="action-button"> Bid </button></h4>
-                <br></br>
+                <h4>Initial Price: {item.price}</h4>
+                <h4>Item sold: {item.sold ? 'Yes' : "No"}</h4>
+                {/* Bids */}
+                {item.bids.map((bid, index) => (<div key={index}>
+                <h4>Current Price: {bid.amount}</h4>
+                </div>))}
+                <form onSubmit={(e) => this.handleSubmit(e, item)} >
+                {/* <form > */}
+                <input type="number"name="amount"placeholder="amount"></input>
+                <button type="submit"  className="action-button"> Bid </button>
+                </form>
                 <br></br>
                 </div>
-            ))}
+                ))}
                 <br></br>
                 <button className="button" onClick={this.handleHome}> Home </button>
         <br></br>
@@ -73,21 +105,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(Items);
 
 
 
-// import React from 'react'
-// import Item from "./components/Item"
-
-
-// const Items = (props) => { 
-
- 
-// return (
-// <div>
-// {props.items.map(item => <Item key={item.id} item={item} editSold={props.editSold} increaseBid={props.increaseBid}/>)}
-
-// </div>
-// )
-
-// }
-
-
-// export default Items
