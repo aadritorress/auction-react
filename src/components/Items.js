@@ -35,6 +35,7 @@ class Items extends Component {
 
     handleSubmit = (e, item) => {
     e.preventDefault();
+    
     // console.log(e.target[0].value)
         // debugger
     let bid = 
@@ -43,10 +44,20 @@ class Items extends Component {
         item_id: item.id,
         user_id: this.props.user.id
     }
-    // console.log(bid)
+    console.log(bid)
     // console.log('user:', this.props.user)
-    // console.log('item:', item)
-    this.props.addBid(bid); 
+    console.log('item:', item)
+
+    let higherAmount = Math.max(...item.bids.map(bid => bid.amount))
+    // console.log(higherAmount)
+
+    if (bid.amount > higherAmount) {
+        this.props.addBid(bid); 
+    // this.props.addBid(bid)
+    }
+    // else {
+    // some error
+    // }
     }
 
     componentDidMount() {
@@ -58,6 +69,9 @@ class Items extends Component {
         const items = this.props.items;
         // console.log('items:', items)
         // debugger
+        // let higherAmount = items.map(item => Math.max(item.bids.map(bid => bid.amount)))
+        let higherAmount = items.map(item => Math.max(...item.bids.map(bid => bid.amount)))
+
         return (
       <div >
           <div >
@@ -76,11 +90,12 @@ class Items extends Component {
                 <h4>Condition: {item.condition}</h4>
                 <h4>City: {item.city}</h4>
                 <h4>Initial Price: {item.price}</h4>
+                <h4>Current Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h4>
                 {/* <h4>Item sold: {item.sold ? 'Yes' : "No"}</h4> */}
                 {/* Bids */}
-                {item.bids.map((bid, index) => (<div key={index}>
+                {/* {item.bids.map((bid, index) => (<div key={index}>
                 <h4>Current Price: ${bid.amount}</h4>
-                </div>))}
+                </div>))} */}
                 {item.sold ? 'ITEM SOLD' :
                 <form onSubmit={(e) => this.handleSubmit(e, item)} >
                 {/* <form > */}

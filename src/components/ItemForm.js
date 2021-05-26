@@ -33,7 +33,7 @@ const ItemForm = (props) => {
         e.preventDefault();
         setErrors([]);
         const item = {
-            name, image, price, condition, city, sold: false, user_id: props.user.id, charity_id: 10
+            name, image, price, condition, city, sold: false, user_id: props.user.id, charity_id: 11
         };
 
         const errors = [];
