@@ -26,10 +26,14 @@ switch(action.type) {
             ...state, 
             items: state.items.map(item => item.id === updatedItem.id ? updatedItem : item)
         }
+    case 'DELETE_ITEM':
+    return {
+          items: state.items.filter(item => item !== action.payload)
+    }
 
         
     default: return state 
 }
-}
+}    
 
 export default itemReducer

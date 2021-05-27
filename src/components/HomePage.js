@@ -31,7 +31,7 @@ props.history.push("/Charity");
     <div>
        <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="200" height="200"></img>
       <br></br>
-      <button className="sold-button" onClick={handleCharity}> About us </button>
+      <button className="item-button" onClick={handleCharity}> About us </button>
       <br></br>
       
       <p> Home Page </p>

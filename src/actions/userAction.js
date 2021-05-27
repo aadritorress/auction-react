@@ -21,7 +21,7 @@ export const signUp = (user) => async (dispatch) => {
     })
 }
 
-
+   
 export const getUser = () => async (dispatch) => {
     fetch('http://localhost:3000/api/v1/users', {
         method: "GET",
@@ -34,7 +34,7 @@ export const getUser = () => async (dispatch) => {
     .then (resp => resp.json())
     .then(user => {
         const payload = user;
-        console.log(user)
+        // console.log(user)
         dispatch({type: "GET_USER", payload})
     })
 }
@@ -45,7 +45,7 @@ export const deleteUser = (user) => async (dispatch) => {
         method: "DELETE",
     })
         const payload = user;
-        console.log(user)
+        // console.log(user)
         dispatch({type: "DELETE_USER", payload})
 }
 

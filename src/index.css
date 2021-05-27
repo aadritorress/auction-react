@@ -39,20 +39,16 @@ input {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  box-shadow: 2px 16px 30px 0 rgba(233, 191, 7, 0.2); 
   padding: 16px;
   text-align: center;
-  background-color: #ffffff;
+  margin:auto; 
+  width: 250px;
+  position: relative;
+  border: 1px solid rgb(235, 162, 5);
 }
 
-.form {
-   position: sticky;
-  width: 10%;
-  bottom: 0.1px;
-  /* border: 3px solid #8AC007; */
-}
-
-.form-card {
+.charity-card {
   box-shadow: 0 4px 8px 0 rgba(255, 174, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
   text-align: center;
@@ -63,12 +59,35 @@ input {
   width: 250px;
 }
 
+.form {
+   position: sticky;
+  width: 10%;
+  bottom: 0.1px;
+  /* border: 3px solid #8AC007; */
+}
+
+.form-card {
+  box-shadow: 0 4px 8px 0 rgba(255, 174, 0, 0.2); 
+  padding: 16px;
+  text-align: center;
+  margin: auto; 
+  /* margin-bottom: 15px;
+  margin-top: 15px; */
+  background-color: #c0a241;
+  box-shadow: saddlebrown;
+  border: salmon;
+  width: 250px;
+}
+
 .item-card {
-  box-shadow: 0 16px 30px 0 rgba(255, 255, 255, 0.2); /* this adds the "card" effect */
+  box-shadow: 0 29px 50px 0 rgba(255, 255, 255, 0.2); 
   padding: 16px;
   text-align: center;
   margin:auto; 
+  margin-bottom: 5px;
   width: 250px;
+  position: relative;
+  /* border: 2px solid rgb(235, 162, 5); */
 }
 
 .button {
@@ -123,9 +142,9 @@ background:rgb(255, 187, 0) }
 .signup-button:hover {background:rgb(255, 187, 0)}
 
 
-.sold-button {
+.item-button {
   font-size: 0.6rem;
-  height: 2rem;
+  height: 1.5rem;
   width: 50px;
   text-align: center; 
   line-height: 0rem;

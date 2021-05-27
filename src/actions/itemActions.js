@@ -15,7 +15,7 @@ export const getItems = () => async (dispatch) => {
     const payload = items;
     dispatch({type: "SET_ITEM", payload});
   });
-}   
+}     
   
 export const addItem = (item) => async(dispatch, getState) => {
     fetch("http://localhost:3000/api/v1/items", {
@@ -54,3 +54,11 @@ export const editItem = (item) => async (dispatch) => {
 }
 
 
+export const deleteItem = (item) => async (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/items/${item.id}`, {
+        method: "DELETE",
+    })
+        const payload = item;
+        console.log(item)
+        dispatch({type: "DELETE_ITEM", payload})
+}

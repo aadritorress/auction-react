@@ -7,7 +7,7 @@ const initialState = {
 const charityReducer = (state = initialState, action) => {
 switch(action.type) {
     case "SET_CHARITY":
-        console.log("hitting reducer")
+        // console.log("hitting reducer")
         return {   
             ...state,
              charities: action.payload

@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { deleteUser, editUser } from '../actions/userAction'
-import { editItem } from '../actions/itemActions'
+import { editItem, deleteItem } from '../actions/itemActions'
 
 
 
@@ -17,7 +17,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     deleteUser: user => dispatch(deleteUser(user)),
     editUser: user => dispatch(editUser(user)),
-    editItem: item => dispatch(editItem(item))
+    editItem: item => dispatch(editItem(item)),
+    deleteItem: item => dispatch(deleteItem(item))
   }
 };
 
@@ -52,6 +53,11 @@ class Profile extends Component {
   this.props.editItem(item);
   }
 
+  deleteItem = (item) => {
+    console.log('clicked') 
+    this.props.deleteItem(item);
+  }
+
   handleDelete = () => {
     console.log('clicked')
   this.props.deleteUser(this.props.user);
@@ -68,7 +74,7 @@ class Profile extends Component {
 
   render() {
 const user = this.props.user
-console.log('user:', user)
+// console.log('user:', user)
 const showForm = this.state.showForm;
 // debugger 
 // array with all users 
@@ -91,7 +97,7 @@ const showForm = this.state.showForm;
           <br></br>
           <input type="text" name="username" value={user.username} onChange={this.changeUser}/>
         <br></br>
-        <button className="sold-button" onClick={this.handleEdit}>Save</button>
+        <button className="item-button" onClick={this.handleEdit}>Save</button>
       </form> : ''}
 
 
@@ -105,7 +111,8 @@ const showForm = this.state.showForm;
     <h6>Condition: {item.condition}</h6>
     <h6>City: {item.city}</h6>
     <h6>Item sold: {item.sold ? 'Yes' : "No"}</h6>
-    <button onClick={() => this.handleSold(item)} className="sold-button"> {item.sold ? 'Available' : "Sold"} </button>
+    <button onClick={() => this.handleSold(item)} className="item-button"> {item.sold ? 'Available' : "Sold"} </button>
+    <button onClick={() => this.deleteItem(item)} className="item-button"> Delete </button>
     <br></br>
     <br></br>
     </div>

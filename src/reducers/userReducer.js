@@ -30,4 +30,4 @@ case "CREATE_USER":
     }
 }
 
-export default userReducer
+export default userReducer    
