@@ -16,3 +16,5 @@ export const getCharities = () => async (dispatch) => {
     dispatch({type: "SET_CHARITY", payload});
   });
 }   
+
+

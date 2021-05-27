@@ -28,15 +28,3 @@ export const handleLogin = (e, dispatch, history) => {
 
 
 
-
-
-
-// export const handleLogOut = () => {
-//  handleLogOut = () => {
-//    localStorage.clear()
-// }
-// }
-
-
-
-

@@ -159,7 +159,39 @@ background:rgb(255, 187, 0) }
   border: none; 
   cursor: pointer;
 }
-.sold-button:hover { 
+.item-button:hover { 
+background:rgb(255, 187, 0) } 
+
+.donate {
+  font-size: 0.8rem;
+  height: 2rem;
+  width: 150px;
+  text-align: auto; 
+  line-height: 0rem;
+  color: rgb(255, 255, 255);
+  background: rgb(235, 162, 5);
+  border-color: rgb(255, 255, 255);
+  border-radius: 100px;
+  border: none; 
+  cursor: pointer;
+}
+.donate:hover { 
+background:rgb(255, 187, 0) } 
+
+.donation-button {
+  font-size: 0.6rem;
+  height: 1.5rem;
+  width: 90px;
+  text-align: center; 
+  line-height: 0rem;
+  color: rgb(255, 255, 255);
+  background: rgb(235, 162, 5);
+  border-color: rgb(255, 255, 255);
+  border-radius: 100px;
+  border: none; 
+  cursor: pointer;
+}
+.donation-button:hover { 
 background:rgb(255, 187, 0) } 
 
 

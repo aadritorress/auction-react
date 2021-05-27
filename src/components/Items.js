@@ -26,15 +26,12 @@ const mapDispatchToProps = (dispatch) => {
 
 const Items = (props) => {
     
-    
     const handleHome = () =>{ 
         props.history.push("/HomePage");
     }
     
-    
    const handleSubmit = (e, item) => {
         e.preventDefault();
-        
         let bid = 
         { 
             amount: e.target[0].value, 
@@ -49,7 +46,6 @@ const Items = (props) => {
 
         if (bid.amount > higherAmount) {
             props.addBid(bid); 
-            // this.props.addBid(bid)
         }
         // else {
             // some error
@@ -113,6 +109,9 @@ const Items = (props) => {
             })}
             </div>
             <br></br>
+            <div> 
+                <h3> Experiences</h3> 
+            </div>
             <button className="button" onClick={handleHome}> Home </button>
             </div>
     ) 
