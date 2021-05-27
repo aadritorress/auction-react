@@ -8,7 +8,7 @@ export const getItems = () => async (dispatch) => {
      'Accept': 'application/json',
      'Authorization': `Bearer ${localStorage.token}`
     }
-  })
+  })  
   .then(resp => resp.json())
   .then(items => {
     // console.log(items)

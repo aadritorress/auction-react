@@ -4,7 +4,7 @@ import { getItems } from '../actions/itemActions'
 import { getBids, addBid } from '../actions/bidActions'  
 // import { useDispatch } from 'react-redux'
 
-
+ 
 const mapStateToProps = (state) => {
     // debugger
     return { 
@@ -70,7 +70,6 @@ class Items extends Component {
         // console.log('items:', items)
         // debugger
         // let higherAmount = items.map(item => Math.max(item.bids.map(bid => bid.amount)))
-        let higherAmount = items.map(item => Math.max(...item.bids.map(bid => bid.amount)))
 
         return (
       <div >
@@ -90,7 +89,8 @@ class Items extends Component {
                 <h4>Condition: {item.condition}</h4>
                 <h4>City: {item.city}</h4>
                 <h4>Initial Price: {item.price}</h4>
-                <h4>Current Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h4>
+                {item.bids ?  
+                <h4>Current Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h4> : 'No bids'}
                 {/* <h4>Item sold: {item.sold ? 'Yes' : "No"}</h4> */}
                 {/* Bids */}
                 {/* {item.bids.map((bid, index) => (<div key={index}>
