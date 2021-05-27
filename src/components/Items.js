@@ -56,13 +56,11 @@ const Items = (props) => {
             // }
         }
         
-        
         useEffect( ()=>{
         props.getItems();
         props.getBids();
          }, [] );
         
-
         const [searchTerm, setSearchTerm] = useState(' ')
 
         const items = props.items;
@@ -75,8 +73,9 @@ const Items = (props) => {
             <br></br>
           <input type="text" placeholder='Search...' onChange={e => {setSearchTerm(e.target.value)}} />
             <h3> All Items</h3>
-            {items.filter((item) => {
-                if (searchTerm == ' ') {
+            <div className="container">
+            {items.filter(item => {
+                if (searchTerm === ' ') {
                     return item
                 } else if (item.name.toLowerCase().includes(searchTerm.toLowerCase()))
                 {
@@ -100,6 +99,7 @@ const Items = (props) => {
                 {/* {item.bids.map((bid, index) => (<div key={index}>
                 <h4>Current Price: ${bid.amount}</h4>
                  </div>))} */}
+    
                                  {item.sold ? 'ITEM SOLD' :
                                  <form onSubmit={(e) => handleSubmit(e, item)} >
                                  {/* <form > */}
@@ -111,6 +111,7 @@ const Items = (props) => {
                     </div>
                 );
             })}
+            </div>
             <br></br>
             <button className="button" onClick={handleHome}> Home </button>
             </div>

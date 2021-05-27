@@ -90,6 +90,10 @@ input {
   /* border: 2px solid rgb(235, 162, 5); */
 }
 
+.container {
+   display: flex; 
+}
+
 .button {
   font-size: 0.6rem;
   height: 2rem;
