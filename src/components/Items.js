@@ -63,15 +63,22 @@ const Items = (props) => {
         return (
 
             <div>
-            <br></br>
+                 <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
+                <br></br>
+                <h1>All Items</h1>
+                
             <button className="button" onClick={handleHome}> Home </button> 
             <br></br>
+             <br></br>
+              <br></br>
           <input type="text" placeholder='Search...' onChange={e => {setSearchTerm(e.target.value)}} />
-            
-            <h3> All Items</h3>
+
+            <div> 
+            {/* <h3> Experiences</h3>  */}
+            </div>
+            {/* <h3> All Items</h3> */}
             <div className="container">
             {items.filter(item => {
-
                 if (searchTerm === ' ') {
                     return item
                 } else if (item.name.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -102,9 +109,6 @@ const Items = (props) => {
             })}
             </div>
             <br></br>
-            <div> 
-            <h3> Experiences</h3> 
-            </div>
             <button className="button" onClick={handleHome}> Home </button>
             </div>
     ) 

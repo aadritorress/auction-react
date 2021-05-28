@@ -7,7 +7,8 @@ import {connect} from 'react-redux';
 const mapStateToProps = (state) => {
     // debugger 
     return { 
-        user: state.loginState.user
+        user: state.loginState.user,
+        charities: state.charities.charities
     };
 };
 
@@ -55,13 +56,16 @@ const ItemForm = (props) => {
 
   return (
       <div>
+                <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
+                <br></br>
+                <h1>Donate</h1>
             <br></br>
 
             <button className="button" onClick={handleHome}> Home </button>
             
             {errors && errors.length > 0 ? errors.map((error, idx) => (<div key={idx}>{error}</div>)) : ''}
              <form className = "form-card" onSubmit={handleSubmit}>
-                <h3>Donation Form</h3>
+          
              <input type="text" value={name} onChange={e => setName(e.target.value)} name="name" placeholder="name"></input>
              <br></br>
               <input type='text' value={image} onChange={e => setImage(e.target.value)} placeholder="image" name='image'/>

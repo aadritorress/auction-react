@@ -33,7 +33,9 @@ const Signup = (props) => {
 
     return (
     <div>
-    <h3>Sign Up!</h3>
+        <img src="https://i.ibb.co/9wcjgLt/Screen-Shot-2021-05-28-at-1-06-46-PM.png" alt="" width="1400" height="300"></img>
+       <br></br>
+    <h3 className='h3'>Sign Up!</h3>
     <form className = "form-card" onSubmit={handleSubmit}>
              <input required type="text" value={name} onChange={e => setName(e.target.value)} name="name" placeholder="name"></input>
              <br></br>

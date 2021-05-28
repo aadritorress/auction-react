@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
 
 body {
   /* background: url("https://i.ibb.co/1zVp5j3/background.png") no-repeat center center fixed;  */
@@ -11,7 +11,7 @@ body {
     /* margin: 190px; */
     /* padding:0; */
     text-align:center;
-    font-family: 'Architects Daughter';
+    font-family: 'Rajdhani', sans-serif;
     color:rgb(77, 35, 1)
 }
 
@@ -20,7 +20,10 @@ h1 {
   color: aliceblue;
 }
 
-
+.h3{
+  background-color: rgb(190, 158, 89);
+  color: aliceblue;
+}
 
 /* code {
   font-family: 'Source Code Pro', monospace;
@@ -82,8 +85,7 @@ input {
   margin: auto; 
   /* margin-bottom: 15px;
   margin-top: 15px; */
-  background-color: #c0a241;
-  box-shadow: saddlebrown;
+  background-color: #e6d7a6;
   border: salmon;
   width: 250px;
 }
@@ -114,11 +116,28 @@ input {
   border-radius: 10px;
   margin: 13px;
   /* opacity: 0.50; */
-  border: none; 
+  border-color:rgb(190, 158, 89) ; 
   cursor: pointer;
 }
 .button:hover { 
-background:rgb(82, 72, 45) } 
+background:rgb(190, 158, 89) } 
+
+.button-delete-account {
+  font-size: 0.6rem;
+  height: 2rem;
+  width: 8rem;
+  text-align: center; 
+  line-height: 0rem;
+  color: rgb(255, 255, 255);
+  background: rgb(190, 158, 89);
+  border-radius: 10px;
+  margin: 13px;
+  /* opacity: 0.50; */
+  border-color:rgb(190, 158, 89) ; 
+  cursor: pointer;
+}
+.button:hover { 
+background:rgb(190, 158, 89) } 
 
 .btn-toolbar {
   margin: 13px;
@@ -131,10 +150,10 @@ background:rgb(82, 72, 45) }
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(121, 41, 17);
+  background: rgb(190, 158, 89);
   border-color: rgb(255, 255, 255);
   border-radius: 100px;
-  /* border: none;  */
+  border: none; 
   cursor: pointer;
 }
 
@@ -148,11 +167,11 @@ background:rgb(82, 72, 45) }
   background: rgb(190, 158, 89);
   border-color: rgb(255, 255, 255);
   border-radius: 10px;
-  border: none; 
+  border-color:rgb(190, 158, 89) ; 
   cursor: pointer;
 }
 /* .signup-button:hover { height: 2.2rem; width: 110px;}  */
-.signup-button:hover {background:rgb(82, 72, 45) }
+.signup-button:hover {background:rgb(190, 158, 89) }
 
 
 .item-button {

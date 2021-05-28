@@ -14,7 +14,7 @@ const Login = (props) => {
 
     return (
       <div>
-       <img src="https://i.ibb.co/9wcjgLt/Screen-Shot-2021-05-28-at-1-06-46-PM.png" alt="image" width="1400" height="300"></img>
+       <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
        <br></br>
        <h1>Online Auction</h1>
        <h3>Helping Nonprofits Raise Money</h3>
@@ -28,8 +28,7 @@ const Login = (props) => {
            <br></br>
            {/* <label>password:</label> */}
            <input type='password' placeholder='password'/>
-           <br></br>
-           <br></br>
+          <br></br>
            <input className= "button" type='submit' value="Sign In" />
        {/* { props.loggedIn ? <Redirect to= "/HomePage"/> : null } */}
        </form>

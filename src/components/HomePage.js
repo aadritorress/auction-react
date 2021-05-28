@@ -30,9 +30,9 @@ props.history.push("/Charity");
   return (
    
     <div>
-       <img src="https://i.ibb.co/9wcjgLt/Screen-Shot-2021-05-28-at-1-06-46-PM.png" alt="image" width="1400" height="300"></img>
+        <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
        <br></br>
-       <h1>Home Page</h1>
+       <h1>Homepage</h1>
        <br></br>
       <button className="button" onClick={handleCharity}> About us </button>
   

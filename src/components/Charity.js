@@ -42,6 +42,7 @@ class Charity extends Component {
     let userDonation = parseInt(donation.donation)
     let totalDonations = charityDonation + userDonation
     console.log(totalDonations)
+    // this.props.addDonation(totalDonations); 
     }
 
   donationsInput = () => {
@@ -53,6 +54,9 @@ class Charity extends Component {
    const charities = this.props.charities 
     return (
     <div >
+       <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
+       <br></br>
+       <h1>About us</h1>
        <br></br>
             <button className="button" onClick={this.handleHome}> Home </button>
             <h2> Currently helping:</h2>

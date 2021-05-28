@@ -80,9 +80,11 @@ const showForm = this.state.showForm;
 // array with all users 
     return (
       <div >
+        <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
+       <br></br>
+       <h1>Profile Page</h1>
          <br></br>
       <button className="button" onClick={this.handleHome}> Home </button>
-    <h2>Profile Page</h2>
     <h4>Name: {user.name}</h4>
     <h4>Email: {user.email}</h4>
     <h4>Username: {user.username}</h4>
@@ -116,7 +118,7 @@ const showForm = this.state.showForm;
     <br></br>
     </div>
     ))}
-     <button className="button" onClick={this.handleDelete}> Delete Account </button>
+     <button className="button-delete-account" onClick={this.handleDelete}> Delete Account </button>
     </div>
     )
   }
