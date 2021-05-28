@@ -28,9 +28,13 @@ switch(action.type) {
         }
     case 'DELETE_ITEM':
     return {
-          items: state.items.filter(item => item !== action.payload)
+          items: state.items.filter(item => item.id !== action.payload.id)
     }
-
+    case "ADD_BID":
+        return {
+            ...state, 
+            items: state.items.map( item => item.id === action.payload.item_id ? {...item, bids: [...item.bids, action.payload] } : item)
+        }  
         
     default: return state 
 }

@@ -25,7 +25,6 @@ case "CREATE_USER":
       return {
           user: state.user.filter(currentUser => currentUser !== action.payload)
         }
-
     default: return state
     }
 }

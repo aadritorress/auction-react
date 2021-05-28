@@ -14,9 +14,10 @@ const Login = (props) => {
 
     return (
       <div>
-       {/* <h1>Auction App</h1> */}
-       <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="350" height="350"></img>
+       <img src="https://i.ibb.co/9wcjgLt/Screen-Shot-2021-05-28-at-1-06-46-PM.png" alt="image" width="1400" height="300"></img>
        <br></br>
+       <h1>Online Auction</h1>
+       <h3>Helping Nonprofits Raise Money</h3>
         <button className="signup-button" onClick={handleSignUp}> Sign Up</button>
         <h3><strong>Sign in</strong></h3>
        <form onSubmit={(e) =>

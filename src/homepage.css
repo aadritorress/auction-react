@@ -1,0 +1,12 @@
+body  {
+  background: url("https://i.ibb.co/3YBJ7S9/background.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin:50px 60px 0 50px; 
+    padding:0;
+    text-align:bottom;
+    font-family: 'Source Code Pro', monospace;
+    color:rgb(77, 35, 1)
+}

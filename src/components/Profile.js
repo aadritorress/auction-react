@@ -80,7 +80,6 @@ const showForm = this.state.showForm;
 // array with all users 
     return (
       <div >
-         <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="200" height="200"></img>
          <br></br>
       <button className="button" onClick={this.handleHome}> Home </button>
     <h2>Profile Page</h2>

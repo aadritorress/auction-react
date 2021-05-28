@@ -28,25 +28,26 @@ props.history.push("/Charity");
 
 
   return (
+   
     <div>
-       <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="calendar" width="200" height="200"></img>
-      <br></br>
-      <button className="item-button" onClick={handleCharity}> About us </button>
-      <br></br>
-      
-      <p> Home Page </p>
+       <img src="https://i.ibb.co/9wcjgLt/Screen-Shot-2021-05-28-at-1-06-46-PM.png" alt="image" width="1400" height="300"></img>
+       <br></br>
+       <h1>Home Page</h1>
+       <br></br>
+      <button className="button" onClick={handleCharity}> About us </button>
+  
 
       <button className="button" onClick={handleProfile}> My Profile </button>
       
       <button className="button" onClick={handleItems}> Search Items </button>
      
       <button className="button" onClick={handleOffer}> Offer Item </button>
-      <br></br>
+      {/* <br></br> */}
       <button className="button" onClick={handleLogOut}> Log Out </button>
      </div>
+ 
       );
     }
-    
     export default HomePage
     
     

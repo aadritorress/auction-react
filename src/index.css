@@ -1,17 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Shadows+Into+Light&display=swap');
 
 body {
-  background: url("https://i.ibb.co/ZKgfZr1/background.png") no-repeat center center fixed; 
-    -webkit-background-size: cover;
+  /* background: url("https://i.ibb.co/1zVp5j3/background.png") no-repeat center center fixed;  */
+  background-color: rgb(214, 207, 164);
+    /* -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    margin:50px 0; 
-    padding:0;
+    background-size: cover; */
+    /* margin:50px 60px 0 50px;  */
+    /* margin: 190px; */
+    /* padding:0; */
     text-align:center;
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Architects Daughter';
     color:rgb(77, 35, 1)
 }
+
+h1 {
+  background-color: rgb(190, 158, 89);
+  color: aliceblue;
+}
+
+
 
 /* code {
   font-family: 'Source Code Pro', monospace;
@@ -20,7 +29,7 @@ body {
 input {
   padding: 5px;
   margin:5px 0;
-  border: 2px solid rgb(235, 162, 5);
+  border: 2px solid rgb(190, 158, 89);
   border-radius: 32px;
 }
 
@@ -53,7 +62,7 @@ input {
   padding: 16px;
   text-align: center;
   margin: auto; 
-  background-color: #c0a241;
+  background-color: #f3e1a8;
   box-shadow: saddlebrown;
   border: salmon;
   width: 250px;
@@ -101,15 +110,15 @@ input {
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(235, 162, 5);
-  border-radius: 32px;
+  background: rgb(190, 158, 89);
+  border-radius: 10px;
   margin: 13px;
   /* opacity: 0.50; */
   border: none; 
   cursor: pointer;
 }
 .button:hover { 
-background:rgb(255, 187, 0) } 
+background:rgb(82, 72, 45) } 
 
 .btn-toolbar {
   margin: 13px;
@@ -136,14 +145,14 @@ background:rgb(255, 187, 0) }
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(235, 162, 5);
+  background: rgb(190, 158, 89);
   border-color: rgb(255, 255, 255);
-  border-radius: 30px;
+  border-radius: 10px;
   border: none; 
   cursor: pointer;
 }
 /* .signup-button:hover { height: 2.2rem; width: 110px;}  */
-.signup-button:hover {background:rgb(255, 187, 0)}
+.signup-button:hover {background:rgb(82, 72, 45) }
 
 
 .item-button {
@@ -169,14 +178,14 @@ background:rgb(255, 187, 0) }
   text-align: auto; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(235, 162, 5);
+  background: rgb(190, 158, 89);
   border-color: rgb(255, 255, 255);
   border-radius: 100px;
   border: none; 
   cursor: pointer;
 }
 .donate:hover { 
-background:rgb(255, 187, 0) } 
+background:rgb(82, 72, 45) } 
 
 .donation-button {
   font-size: 0.6rem;
@@ -185,14 +194,14 @@ background:rgb(255, 187, 0) }
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(235, 162, 5);
+  background: rgb(190, 158, 89);
   border-color: rgb(255, 255, 255);
   border-radius: 100px;
   border: none; 
   cursor: pointer;
 }
 .donation-button:hover { 
-background:rgb(255, 187, 0) } 
+background:rgb(82, 72, 45) } 
 
 
 .button-home {

@@ -24,9 +24,15 @@ switch(action.type){
         id: null,
         loggedIn: false 
     }
-    default: 
-    return state 
+    case 'DELETE_ITEM':
+    return {
+          ...state, user: {
+          ...state.user, items: state.user.items.filter(item => item.id !== action.payload.id)}
     }
+
+    default: return state 
+    }
+    
 }
 
 export default loginReducer      

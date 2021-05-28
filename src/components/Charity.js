@@ -38,8 +38,8 @@ class Charity extends Component {
     console.log('donation:', donation.donation)
     console.log('charity:', charity.donations)
     // console.log('user:', this.props.user)
-    let charityDonation = charity.donations
-    let userDonation = donation.donation
+    let charityDonation = parseInt(charity.donations)
+    let userDonation = parseInt(donation.donation)
     let totalDonations = charityDonation + userDonation
     console.log(totalDonations)
     }
@@ -51,10 +51,8 @@ class Charity extends Component {
   render() {
 
    const charities = this.props.charities 
-
     return (
     <div >
-       <img src="https://i.ibb.co/gr47YrK/Screen-Shot-2021-05-22-at-12-03-53-PM.png" alt="logo" width="200" height="200"></img>
        <br></br>
             <button className="button" onClick={this.handleHome}> Home </button>
             <h2> Currently helping:</h2>

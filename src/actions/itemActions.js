@@ -57,6 +57,9 @@ export const editItem = (item) => async (dispatch) => {
 export const deleteItem = (item) => async (dispatch) => {
     fetch(`http://localhost:3000/api/v1/items/${item.id}`, {
         method: "DELETE",
+        headers: {
+        'Authorization': `Bearer ${localStorage.token}`
+        }
     })
         const payload = item;
         console.log(item)
