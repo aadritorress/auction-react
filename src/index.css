@@ -36,6 +36,13 @@ input {
   border-radius: 32px;
 }
 
+select {
+   padding: 5px;
+  margin:5px 0;
+  border: 2px solid rgb(190, 158, 89);
+  border-radius: 32px;
+}
+
 .column {
   float: left;
   width: 25%;
@@ -87,7 +94,7 @@ input {
   margin-top: 15px; */
   background-color: #e6d7a6;
   border: salmon;
-  width: 250px;
+  width: 400px;
 }
 
 .item-card {

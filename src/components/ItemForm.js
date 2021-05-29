@@ -1,7 +1,8 @@
 
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 // import {useDispatch} from 'react-redux'
 import {addItem} from '../actions/itemActions' 
+import { getCharities } from '../actions/charityActions' 
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
             addItem: (item) => dispatch(addItem(item)),
+            getCharities: () => dispatch(getCharities()),
     };
 };
 
@@ -25,6 +27,8 @@ const ItemForm = (props) => {
     const [condition, setCondition] = useState('');
     const [city, setCity] = useState('');
     const [errors, setErrors] = useState([]);
+    const [charity, setCharity] = useState(0);
+    const [type, setType] = useState('no');
 
     const handleHome = () => { 
         props.history.push("/HomePage");
@@ -33,8 +37,9 @@ const ItemForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
+        const isService = type === 'yes';
         const item = {
-            name, image, price, condition, city, sold: false, user_id: props.user.id, charity_id: 7
+            name, image, price, condition, city, sold: false, service: isService, user_id: props.user.id, charity_id: charity
         };
 
         const errors = [];
@@ -53,6 +58,10 @@ const ItemForm = (props) => {
         props.history.push(("/Items")) 
     }
 
+    useEffect(() => {
+        props.getCharities();
+    }, [])
+
 
   return (
       <div>
@@ -62,9 +71,9 @@ const ItemForm = (props) => {
             <br></br>
 
             <button className="button" onClick={handleHome}> Home </button>
-            
             {errors && errors.length > 0 ? errors.map((error, idx) => (<div key={idx}>{error}</div>)) : ''}
              <form className = "form-card" onSubmit={handleSubmit}>
+            <h3> Please fill out the form below </h3>
           
              <input type="text" value={name} onChange={e => setName(e.target.value)} name="name" placeholder="name"></input>
              <br></br>
@@ -76,6 +85,18 @@ const ItemForm = (props) => {
              <br></br>
              <input type="text" value={city} name="city" onChange={e => setCity(e.target.value)} placeholder="city" ></input>
              <br></br>
+             <h3>Is it an experience?</h3>
+                <select name="type" className="" value={type} onChange={(e) => setType(e.target.value)}>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>
+             <br></br>
+              <h3>Choose the fundraiser you would like to help</h3>
+             <select name="charity" className="" value={charity} onChange={(e) => setCharity(e.target.value)}>
+                 {props.charities ? props.charities.map((singleCharity, idx) => (
+                    <option key={idx} value={singleCharity.id}>{singleCharity.name}</option>
+                 )) : ''}
+             </select>
              <br></br>
              <button className="button" type="submit">Add Item</ button>
              <br></br>

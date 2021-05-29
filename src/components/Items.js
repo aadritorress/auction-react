@@ -41,17 +41,15 @@ const Items = (props) => {
 
         if (bid.amount > higherAmount) {
             props.addBid(bid); 
-        }
-        // else {
-            // some error
-            // }
-        }
-        
+        } else {
 
+        alert('hello');
+        }
+    }
 
         useEffect( ()=>{
-        props.getItems();
-        props.getBids();
+            props.getItems();
+            props.getBids();
          }, [] );
         
 
@@ -115,9 +113,3 @@ const Items = (props) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Items);
-
-
-
-
-
-
