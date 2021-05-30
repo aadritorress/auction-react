@@ -28,7 +28,7 @@ const ItemForm = (props) => {
     const [city, setCity] = useState('');
     const [errors, setErrors] = useState([]);
     const [charity, setCharity] = useState(0);
-    const [type, setType] = useState('no');
+   
 
     const handleHome = () => { 
         props.history.push("/HomePage");
@@ -37,9 +37,9 @@ const ItemForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        const isService = type === 'yes';
+        
         const item = {
-            name, image, price, condition, city, sold: false, service: isService, user_id: props.user.id, charity_id: charity
+            name, image, price, condition, city, sold: false, user_id: props.user.id, charity_id: charity
         };
 
         const errors = [];
@@ -64,13 +64,15 @@ const ItemForm = (props) => {
 
 
   return (
-      <div>
-                <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
+      <div className='item-form'>
+    
                 <br></br>
-                <h1>Donate</h1>
+                {/* <h1>Donate</h1> */}
             <br></br>
-
+        <div className='item-formPAGE'>
             <button className="button" onClick={handleHome}> Home </button>
+            <br></br>
+            <br></br>
             {errors && errors.length > 0 ? errors.map((error, idx) => (<div key={idx}>{error}</div>)) : ''}
              <form className = "form-card" onSubmit={handleSubmit}>
             <h3> Please fill out the form below </h3>
@@ -85,12 +87,6 @@ const ItemForm = (props) => {
              <br></br>
              <input type="text" value={city} name="city" onChange={e => setCity(e.target.value)} placeholder="city" ></input>
              <br></br>
-             <h3>Is it an experience?</h3>
-                <select name="type" className="" value={type} onChange={(e) => setType(e.target.value)}>
-                    <option value='yes'>Yes</option>
-                    <option value='no'>No</option>
-                </select>
-             <br></br>
               <h3>Choose the fundraiser you would like to help</h3>
              <select name="charity" className="" value={charity} onChange={(e) => setCharity(e.target.value)}>
                  {props.charities ? props.charities.map((singleCharity, idx) => (
@@ -98,10 +94,13 @@ const ItemForm = (props) => {
                  )) : ''}
              </select>
              <br></br>
-             <button className="button" type="submit">Add Item</ button>
+             <br></br>
+         
+             <button className="signup-button" type="submit">Add Item</ button>
              <br></br>
              <br></br>
              </form>
+             </div>
         </div>
     )
 }

@@ -42,8 +42,7 @@ const Items = (props) => {
         if (bid.amount > higherAmount) {
             props.addBid(bid); 
         } else {
-
-        alert('hello');
+        alert('bid cannot be lower than current price');
         }
     }
 
@@ -61,7 +60,6 @@ const Items = (props) => {
         return (
 
             <div>
-                 <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
                 <br></br>
                 <h1>All Items</h1>
                 

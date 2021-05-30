@@ -28,23 +28,39 @@ props.history.push("/Charity");
 
 
   return (
-   
-    <div>
-        <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
+
+    <div className='homepage'>
+        {/* <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img> */}
        <br></br>
-       <h1>Homepage</h1>
+       <div className='homePAGE'>
+       {/* <h1>Homepage</h1> */}
        <br></br>
       <button className="button" onClick={handleCharity}> About us </button>
-  
-
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <button className="button" onClick={handleProfile}> My Profile </button>
-      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <button className="button" onClick={handleItems}> Search Items </button>
-     
+     <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <button className="button" onClick={handleOffer}> Offer Item </button>
-      {/* <br></br> */}
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <button className="button" onClick={handleLogOut}> Log Out </button>
+      <br></br>
+      <br></br>
+      </div>
      </div>
+   
  
       );
     }

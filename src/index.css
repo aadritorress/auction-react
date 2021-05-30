@@ -1,23 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
 
 body {
-  /* background: url("https://i.ibb.co/1zVp5j3/background.png") no-repeat center center fixed;  */
-  background-color: rgb(214, 207, 164);
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
-    /* margin:50px 60px 0 50px;  */
-    /* margin: 190px; */
-    /* padding:0; */
+  background-color: rgb(241, 236, 200);
     text-align:center;
     font-family: 'Rajdhani', sans-serif;
-    color:rgb(77, 35, 1)
+    color:rgb(148, 28, 13)
 }
 
-h1 {
-  background-color: rgb(190, 158, 89);
-  color: aliceblue;
+
+.homepage {
+  background: url("https://i.ibb.co/h97zD1C/homepage.png") no-repeat center center fixed; 
+  text-align:center;
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        background-size: cover;
+        background-position:center ;
+}
+
+.login  {
+  background: url("https://i.ibb.co/McGJ5rz/background.png") no-repeat center center fixed; 
+        text-align:center;
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        background-size: cover;
+        background-position:center ;
+}
+
+.item-form {
+  background: url("https://i.ibb.co/m9vMZM7/itemform.png") no-repeat center center fixed; 
+  text-align:center;
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        background-size: cover;
+        background-position:center ;
+}
+
+.profile {
+  background: url("https://i.ibb.co/HrgF0sX/profile.png") no-repeat center center fixed; 
+  text-align:center;
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        background-size: cover;
+        background-position:center ;
+}
+
+.signIN {
+    margin:400px 1000px 0 70px; 
+    padding:0;
+    text-align:center;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.homePAGE {
+    margin:135px 0px 0px 600px; 
+    padding:0;
+    text-align:center;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.item-formPAGE {
+    margin:85px 1000px 0 70px; 
+    padding:0;
+    text-align:center;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.profile-info {
+  margin:85px 1000px 0 70px; 
+    padding:0;
+    text-align:center;
+    font-family: 'Rajdhani', sans-serif;
+    float:left
+}
+
+.profile-donations {
+  margin:0px 0px 0px 600px; 
+    padding:0;
+    text-align:center;
+    font-family: 'Rajdhani', sans-serif;
+    float:right
+}
+
+.profile-card {
+ /* box-shadow: 0 4px 8px 0 rgba(255, 174, 0, 0.2);  */
+  padding: 16px;
+  text-align: center;
+  /* margin: auto;  */
+  /* margin-bottom: 15px;
+  margin-top: 15px; */
+  /* background-color: #e6d7a6; */
+  /* border: salmon; */
+  width:600px;
+}
+
+.profile-font {
+  color:rgb(241, 236, 200)
 }
 
 .h3{
@@ -25,21 +106,18 @@ h1 {
   color: aliceblue;
 }
 
-/* code {
-  font-family: 'Source Code Pro', monospace;
-} */
 
 input {
   padding: 5px;
   margin:5px 0;
-  border: 2px solid rgb(190, 158, 89);
+  border: 2px solid rgb(243, 141, 25);
   border-radius: 32px;
 }
 
 select {
    padding: 5px;
   margin:5px 0;
-  border: 2px solid rgb(190, 158, 89);
+  border: 2px solid rgb(243, 141, 25);
   border-radius: 32px;
 }
 
@@ -103,31 +181,38 @@ select {
   text-align: center;
   margin:auto; 
   margin-bottom: 5px;
+  margin-top: 0px; 
   width: 250px;
-  position: relative;
+  position: auto;
   /* border: 2px solid rgb(235, 162, 5); */
+  flex: 0 115 22%;
 }
 
 .container {
-   display: flex; 
+    display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
 }
 
 .button {
-  font-size: 0.6rem;
+  font-size: 0.9rem;
   height: 2rem;
-  width: 5rem;
+  width: 15rem;
   text-align: center; 
   line-height: 0rem;
-  color: rgb(255, 255, 255);
-  background: rgb(190, 158, 89);
-  border-radius: 10px;
-  margin: 13px;
+  color: rgb(124, 61, 46);
+  background: rgb(248, 162, 81);
+  /* border-radius: 10px; */
+   margin:auto; 
+  /* margin: 13px; */
   /* opacity: 0.50; */
-  border-color:rgb(190, 158, 89) ; 
+  /* border-color:rgb(190, 158, 89) ;  */
+  border: none;
   cursor: pointer;
 }
 .button:hover { 
-background:rgb(190, 158, 89) } 
+background:rgb(161, 52, 38);
+color: white } 
 
 .button-delete-account {
   font-size: 0.6rem;
@@ -143,7 +228,7 @@ background:rgb(190, 158, 89) }
   border-color:rgb(190, 158, 89) ; 
   cursor: pointer;
 }
-.button:hover { 
+.button-delete-account:hover { 
 background:rgb(190, 158, 89) } 
 
 .btn-toolbar {
@@ -152,15 +237,15 @@ background:rgb(190, 158, 89) }
 }
 
 .action-button {
-  font-size: 0.6rem;
+ font-size: 0.6rem;
   height: 2rem;
+  width: 35px;
   text-align: center; 
   line-height: 0rem;
-  color: rgb(255, 255, 255);
-  background: rgb(190, 158, 89);
+  color: rgb(252, 252, 252);
+  background:  rgb(219, 117, 21);
   border-color: rgb(255, 255, 255);
   border-radius: 100px;
-  border: none; 
   cursor: pointer;
 }
 
@@ -170,15 +255,16 @@ background:rgb(190, 158, 89) }
   width: 100px;
   text-align: center; 
   line-height: 0rem;
-  color: rgb(255, 255, 255);
-  background: rgb(190, 158, 89);
-  border-color: rgb(255, 255, 255);
-  border-radius: 10px;
+  color: rgb(124, 61, 46);
+  background: rgb(248, 162, 81);
+  border: none;
+  /* border-radius: 10px; */
   border-color:rgb(190, 158, 89) ; 
   cursor: pointer;
 }
-/* .signup-button:hover { height: 2.2rem; width: 110px;}  */
-.signup-button:hover {background:rgb(190, 158, 89) }
+.signup-button:hover {
+  background:rgb(161, 52, 38);
+color: white }  
 
 
 .item-button {
@@ -188,46 +274,72 @@ background:rgb(190, 158, 89) }
   text-align: center; 
   line-height: 0rem;
   color: rgb(255, 255, 255);
-  background: rgb(235, 162, 5);
+    background: rgb(248, 162, 81);
   border-color: rgb(255, 255, 255);
-  border-radius: 100px;
+  /* border-radius: 100px; */
   border: none; 
+  margin: 5px;
   cursor: pointer;
 }
 .item-button:hover { 
-background:rgb(255, 187, 0) } 
+background:rgb(161, 52, 38);
+color: white } 
+
+.profile-button {
+font-size: 0.6rem;
+  height: 2rem;
+  width: 100px;
+  text-align: center; 
+  line-height: 0rem;
+  color: rgb(124, 61, 46);
+  background: rgb(248, 162, 81);
+  border: none;
+  /* border-radius: 10px; */
+  border-color:rgb(190, 158, 89) ; 
+  cursor: pointer;
+}
+.profile-button:hover {
+  background:rgb(161, 52, 38);
+color: white }  
+
 
 .donate {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   height: 2rem;
-  width: 150px;
-  text-align: auto; 
+  width: 8rem;
+  text-align: center; 
   line-height: 0rem;
-  color: rgb(255, 255, 255);
-  background: rgb(190, 158, 89);
-  border-color: rgb(255, 255, 255);
-  border-radius: 100px;
-  border: none; 
+  color: rgb(124, 61, 46);
+  background: rgb(248, 162, 81);
+  /* border-radius: 10px; */
+   margin:auto; 
+  /* margin: 13px; */
+  /* opacity: 0.50; */
+  /* border-color:rgb(190, 158, 89) ;  */
+  border: none;
   cursor: pointer;
 }
 .donate:hover { 
-background:rgb(82, 72, 45) } 
+background:rgb(161, 52, 38);
+color: white } 
+
 
 .donation-button {
   font-size: 0.6rem;
-  height: 1.5rem;
-  width: 90px;
+  height: 2rem;
+  width: 75px;
   text-align: center; 
   line-height: 0rem;
-  color: rgb(255, 255, 255);
-  background: rgb(190, 158, 89);
-  border-color: rgb(255, 255, 255);
-  border-radius: 100px;
-  border: none; 
+  color: rgb(124, 61, 46);
+  background: rgb(248, 162, 81);
+  border: none;
+  /* border-radius: 10px; */
+  border-color:rgb(190, 158, 89) ; 
   cursor: pointer;
 }
-.donation-button:hover { 
-background:rgb(82, 72, 45) } 
+.donation-button:hover {
+  background:rgb(161, 52, 38);
+color: white }  
 
 
 .button-home {

@@ -32,11 +32,16 @@ const Signup = (props) => {
     }
 
     return (
-    <div>
-        <img src="https://i.ibb.co/9wcjgLt/Screen-Shot-2021-05-28-at-1-06-46-PM.png" alt="" width="1400" height="300"></img>
+    <div className='item-form'>
+      
        <br></br>
-    <h3 className='h3'>Sign Up!</h3>
+       <div className='item-formPAGE'>
+           <br></br>
+           <br></br>
+        <br></br>
+    {/* <h3 >Sign Up!</h3> */}
     <form className = "form-card" onSubmit={handleSubmit}>
+        <h2> Create an Account </h2>
              <input required type="text" value={name} onChange={e => setName(e.target.value)} name="name" placeholder="name"></input>
              <br></br>
               <input required type='text' value={email} onChange={e => setEmail(e.target.value)} placeholder="email" name='email'/>
@@ -45,10 +50,12 @@ const Signup = (props) => {
              <br></br>
              <input required type="password" value={password} name="password" onChange={e => setPassword(e.target.value)} placeholder="password" ></input>
              <br></br>
+             <br></br>
              <button className="button" type="submit"> Register </button>
              <br></br>
              <br></br>
              </form>
+             </div>
    
     </div>
     )

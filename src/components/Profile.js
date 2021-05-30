@@ -79,16 +79,18 @@ const showForm = this.state.showForm;
 // debugger 
 // array with all users 
     return (
-      <div >
-        <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
+      <div className="profile">
+      <div className='container'>
+      <div className="profile-card">
+       <h1 className="profile-font">Profile Page</h1>
+        {/* <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img> */}
        <br></br>
-       <h1>Profile Page</h1>
          <br></br>
       <button className="button" onClick={this.handleHome}> Home </button>
-    <h4>Name: {user.name}</h4>
-    <h4>Email: {user.email}</h4>
-    <h4>Username: {user.username}</h4>
-    <button className="button" onClick={() => this.showProfileForm()}> Edit Account </button>
+    <h4 className="profile-font">Name: {user.name}</h4>
+    <h4 className="profile-font">Email: {user.email}</h4>
+    <h4  className="profile-font">Username: {user.username}</h4>
+    <button className="profile-button" onClick={() => this.showProfileForm()}> Edit Account </button>
 
       {showForm ? 
       <form onSubmit={this.handleEdit}>
@@ -100,10 +102,14 @@ const showForm = this.state.showForm;
         <br></br>
         <button className="item-button" onClick={this.handleEdit}>Save</button>
       </form> : ''}
+<br></br>
+<br></br>
+<button className="profile-button" onClick={this.handleDelete}> Delete Account </button>
+    </div>
 
 
-
-    <p> Your Donations </p>
+    <div className="profile-card">
+    <h1> Your Donations </h1>
     {user.items?.map((item, index) => (
     <div className="item-card" key={index}>
     <h4>{item.name}</h4>
@@ -118,7 +124,8 @@ const showForm = this.state.showForm;
     <br></br>
     </div>
     ))}
-     <button className="button-delete-account" onClick={this.handleDelete}> Delete Account </button>
+    </div>
+    </div>
     </div>
     )
   }

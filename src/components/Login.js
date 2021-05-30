@@ -5,6 +5,8 @@ import {handleLogin} from '../actions/loginActions'
 import {useDispatch} from 'react-redux'
 
 
+
+
 const Login = (props) => {
     const dispatch = useDispatch()
     
@@ -13,13 +15,20 @@ const Login = (props) => {
     }
 
     return (
-      <div>
-       <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
+    
+      <div className='login'>
+
+       {/* <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
        <br></br>
-       <h1>Online Auction</h1>
-       <h3>Helping Nonprofits Raise Money</h3>
+       <h1> Online Auction</h1>
+       <h3>Helping Nonprofits Raise Money</h3> */}
+       <div className ='signIN'>
         <button className="signup-button" onClick={handleSignUp}> Sign Up</button>
-        <h3><strong>Sign in</strong></h3>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        {/* <h3><strong>Sign in</strong></h3> */}
        <form onSubmit={(e) =>
         {   e.preventDefault()
             handleLogin(e, dispatch, props.history)}} >
@@ -29,11 +38,12 @@ const Login = (props) => {
            {/* <label>password:</label> */}
            <input type='password' placeholder='password'/>
           <br></br>
-           <input className= "button" type='submit' value="Sign In" />
-       {/* { props.loggedIn ? <Redirect to= "/HomePage"/> : null } */}
+           <input className="signup-button" type='submit'value="Sign In" />
+       {/* { props.loggameedIn ? <Redirect to= "/HomePage"/> : null } */}
        </form>
-        <br></br>
        </div>
+       </div>
+    
     )
 }
 

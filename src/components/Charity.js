@@ -54,7 +54,6 @@ class Charity extends Component {
    const charities = this.props.charities 
     return (
     <div >
-       <img src="https://i.ibb.co/kMhP07G/Screen-Shot-2021-05-28-at-6-00-33-PM.png" alt="" width="1400" height="350"></img>
        <br></br>
        <h1>About us</h1>
        <br></br>
@@ -65,7 +64,6 @@ class Charity extends Component {
       {charities.map((charity, index) => 
       <div key={index} className="charity-card">
         <h3>{charity.name}</h3>
-        {/* maybe a logo?? */}
         <h5>{charity.address}</h5>
         <h5>{charity.bio}</h5>
         <h4>${charity.donations} raised</h4>
