@@ -14,6 +14,11 @@ const Login = (props) => {
         props.history.push("/Signup");
     }
 
+    const Forgotpassword = () =>{ 
+        props.history.push("/Forgotpassword");
+    }
+
+
     return (
     
       <div className='login'>
@@ -39,8 +44,10 @@ const Login = (props) => {
            <input type='password' placeholder='password'/>
           <br></br>
            <input className="signup-button" type='submit'value="Sign In" />
-       {/* { props.loggameedIn ? <Redirect to= "/HomePage"/> : null } */}
        </form>
+        <button className="forgotPass" onClick={Forgotpassword}>Forgot name or password?</button>
+       <br></br>
+       {/* <a className= 'profile-font' href="/Forgotpassword">Forgot name or password?</a> */}
        </div>
        </div>
     

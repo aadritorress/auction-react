@@ -99,6 +99,8 @@ const showForm = this.state.showForm;
          <input type="text" name="email" value={user.email} onChange={this.changeUser}/>
           <br></br>
           <input type="text" name="username" value={user.username} onChange={this.changeUser}/>
+          <br></br>
+           <input type="password" name="password" placeholder='change your password' onChange={this.changeUser}/>
         <br></br>
         <button className="item-button" onClick={this.handleEdit}>Save</button>
       </form> : ''}

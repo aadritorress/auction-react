@@ -9,7 +9,7 @@ import ItemForm from './components/ItemForm'
 import Signup from './components/Signup'
 import Charity from './components/Charity'
 import Bye from './components/Bye'
-
+import Forgotpassword from './components/Forgotpassword'
 
 
 
@@ -21,6 +21,7 @@ const Routes = (props) => {
                 <Switch>
                     <Route path="/login" exact component = {props => <Login {...props}/>}/>
                     {/* <Route path="/Signup" exact component = {props => <Signup {...props}/>}/> */}
+                    <Route path="/Forgotpassword" exact component = {props => <Forgotpassword {...props}/>}/>
                     <Route path="/Signup" exact component = {props => <Signup {...props}/>}/>
                     <Route path="/HomePage" exact component = {props => <HomePage {...props}/>}/>
                     <Route path="/Items" exact component = {props => <Items {...props}/>}/>

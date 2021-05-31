@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { getCharities } from '../actions/charityActions' 
+import { getCharities, editDonation } from '../actions/charityActions' 
 import { connect } from 'react-redux';
 
 
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getCharities: () => dispatch(getCharities()),
+        editDonation: charity => dispatch(editDonation(charity)),
     }
 };
 
@@ -41,8 +42,8 @@ class Charity extends Component {
     let charityDonation = parseInt(charity.donations)
     let userDonation = parseInt(donation.donation)
     let totalDonations = charityDonation + userDonation
-    console.log(totalDonations)
-    // this.props.addDonation(totalDonations); 
+    console.log('total donation:', totalDonations)
+    this.props.editDonation(charity); 
     }
 
   donationsInput = () => {
@@ -58,11 +59,18 @@ class Charity extends Component {
        <h1>About us</h1>
        <br></br>
             <button className="button" onClick={this.handleHome}> Home </button>
+            <br></br>
+            <br></br>
+            <h3>OA is a place to fundraise, whether you are an individual, group, or organization. <br></br>
+            Donors can securely donate furniture, classes, workshops and more to help the causes they are most passionate about.<br></br>
+            </h3>
+            <br></br>
             <h2> Currently helping:</h2>
             <br></br>
             <div className="container">
       {charities.map((charity, index) => 
       <div key={index} className="charity-card">
+        <img src={charity.image} alt='' width="220" height="150" ></img>
         <h3>{charity.name}</h3>
         <h5>{charity.address}</h5>
         <h5>{charity.bio}</h5>

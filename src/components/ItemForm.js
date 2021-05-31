@@ -89,10 +89,12 @@ const ItemForm = (props) => {
              <br></br>
               <h3>Choose the fundraiser you would like to help</h3>
              <select name="charity" className="" value={charity} onChange={(e) => setCharity(e.target.value)}>
-                 {props.charities ? props.charities.map((singleCharity, idx) => (
-                    <option key={idx} value={singleCharity.id}>{singleCharity.name}</option>
+                 {props.charities ? props.charities.map((singleCharity, index) => (
+                    <option key={index} value={singleCharity.id}>{singleCharity.name}</option>
                  )) : ''}
              </select>
+             <br></br>
+             <a href="/charity">Click here to find out more about each of them</a>
              <br></br>
              <br></br>
          

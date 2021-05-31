@@ -17,4 +17,22 @@ export const getCharities = () => async (dispatch) => {
   });
 }   
 
-
+  
+export const editDonation = (charity) => async (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/charities/${charity.id}`, {
+    method: "PATCH",
+    headers: {
+    'content-type': 'application/json',
+    'accept': 'application/json',
+    'Authorization': `Bearer ${localStorage.token}`
+        },
+    body: JSON.stringify({charity})
+    })
+    .then (resp => resp.json())
+    .then(charity => {
+        console.log('charity:', charity)
+        const payload = charity;
+        dispatch({type: "EDIT_DONATION", payload})
+    })
+}
+     

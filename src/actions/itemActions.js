@@ -15,7 +15,7 @@ export const getItems = () => async (dispatch) => {
     const payload = items;
     dispatch({type: "SET_ITEM", payload});
   });
-}     
+}        
   
 export const addItem = (item) => async(dispatch, getState) => {
     fetch("http://localhost:3000/api/v1/items", {

@@ -34,7 +34,7 @@ const Items = (props) => {
             item_id: item.id,
             user_id: props.user.id
         }
-
+   
         console.log('item:', item)
         
         let higherAmount = Math.max(...item.bids.map(bid => bid.amount))
@@ -44,6 +44,7 @@ const Items = (props) => {
         } else {
         alert('bid cannot be lower than current price');
         }
+        e.target.reset()
     }
 
         useEffect( ()=>{
