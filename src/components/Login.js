@@ -45,7 +45,7 @@ const Login = (props) => {
           <br></br>
            <input className="signup-button" type='submit'value="Sign In" />
        </form>
-        <button className="forgotPass" onClick={Forgotpassword}>Forgot name or password?</button>
+        <button className="forgotPass" onClick={Forgotpassword}>Forgot username or password?</button>
        <br></br>
        {/* <a className= 'profile-font' href="/Forgotpassword">Forgot name or password?</a> */}
        </div>

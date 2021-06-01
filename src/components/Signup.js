@@ -40,7 +40,7 @@ const Signup = (props) => {
            <br></br>
         <br></br>
     {/* <h3 >Sign Up!</h3> */}
-        <h3> Online giving is fastest-growing method that donors give. Join our community!</h3>
+        <h3> Online giving is the fastest-growing method that donors give. Join our community!</h3>
     <form className = "form-card" onSubmit={handleSubmit}>
         <h2> Create an Account </h2>
              <input required type="text" value={name} onChange={e => setName(e.target.value)} name="name" placeholder="name"></input>

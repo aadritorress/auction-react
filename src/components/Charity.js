@@ -36,14 +36,17 @@ class Charity extends Component {
   handleSubmit = (e, charity) => {
     e.preventDefault();      
     let donation = { donation: e.target[0].value }
+
     console.log('donation:', donation.donation)
     console.log('charity:', charity.donations)
     // console.log('user:', this.props.user)
+
     let charityDonation = parseInt(charity.donations)
     let userDonation = parseInt(donation.donation)
     let totalDonations = charityDonation + userDonation
-    console.log('total donation:', totalDonations)
-    this.props.editDonation(charity); 
+    console.log('user donation:', userDonation)
+    this.props.editDonation({charity, totalDonations}); 
+     e.target.reset()
     }
 
   donationsInput = () => {
@@ -75,7 +78,6 @@ class Charity extends Component {
         <h5>{charity.address}</h5>
         <h5>{charity.bio}</h5>
         <h4>${charity.donations} raised</h4>
-        <button className="donate" onClick={this.donationsInput}> Make a donation </button>
         { this.state.donationsInput ? 
         <form onSubmit={(e) => this.handleSubmit(e, charity)} >               
         <input type="number"name="amount"placeholder="amount"></input>
@@ -84,6 +86,12 @@ class Charity extends Component {
         </form> : ''}
       </div>)}
     </div>
+    <br></br>
+        <button className="donate" onClick={this.donationsInput}> Make a donation </button>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
     </div>
     )
   }

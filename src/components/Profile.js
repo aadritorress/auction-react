@@ -3,12 +3,14 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { deleteUser, editUser } from '../actions/userAction'
 import { editItem, deleteItem } from '../actions/itemActions'
+import { getBids } from '../actions/bidActions' 
 
 
 
 const mapStateToProps = (state) => {
   return { 
     user: state.loginState.user, 
+    bids: state.bids.bids,
     item: state.items.items,
   };
 };
@@ -18,6 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     deleteUser: user => dispatch(deleteUser(user)),
     editUser: user => dispatch(editUser(user)),
     editItem: item => dispatch(editItem(item)),
+    getBids: () => dispatch(getBids()),
     deleteItem: item => dispatch(deleteItem(item))
   }
 };
@@ -65,7 +68,7 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-   
+   this.props.getBids();
   }
 
   showProfileForm = () => {
@@ -116,7 +119,9 @@ const showForm = this.state.showForm;
     <div className="item-card" key={index}>
     <h4>{item.name}</h4>
     <img src={item.image} alt='' width="100" height="100" ></img>
-    <h6>Price: {item.price}</h6>
+    <h6>Initial Price: {item.price}</h6>
+    {item.bids ?  
+     <h5>Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h5> : ''}
     <h6>Condition: {item.condition}</h6>
     <h6>City: {item.city}</h6>
     <h6>Item sold: {item.sold ? 'Yes' : "No"}</h6>

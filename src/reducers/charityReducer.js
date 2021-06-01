@@ -12,7 +12,7 @@ switch(action.type) {
              charities: action.payload
         }  
         case "EDIT_DONATION":
-        console.log("hitting reducer")
+        console.log("reducer")
         let updatedCharity = action.payload
         return {   
             ...state,
@@ -20,7 +20,7 @@ switch(action.type) {
         }  
     default: return state 
     }
-}
+}    
 
 
 export default charityReducer

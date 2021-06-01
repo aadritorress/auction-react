@@ -81,7 +81,7 @@ const ItemForm = (props) => {
              <br></br>
               <input type='text' value={image} onChange={e => setImage(e.target.value)} placeholder="image" name='image'/>
               <br></br>
-             <input type="text" value={price} name="price" onChange={e => setPrice(e.target.value)}  placeholder="price" ></input>
+             <input type="number" value={price} name="price" onChange={e => setPrice(e.target.value)}  placeholder="price" ></input>
              <br></br>
              <input type="text" value={condition} name="condition" onChange={e => setCondition(e.target.value)} placeholder="condition" ></input>
              <br></br>

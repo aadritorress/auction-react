@@ -48,7 +48,9 @@ const Items = (props) => {
     }
 
         useEffect( ()=>{
-            props.getItems();
+            if (props.items.length === 0){
+                props.getItems();
+            }
             props.getBids();
          }, [] );
         
@@ -57,6 +59,7 @@ const Items = (props) => {
         const [searchTerm, setSearchTerm] = useState(' ')
 
         const items = props.items;
+        console.log(props.items)
        
         return (
 
@@ -92,7 +95,7 @@ const Items = (props) => {
                 <h5>Condition: {item.condition}</h5>
                 <h5>City: {item.city}</h5>
                 <h5>Initial Price: ${item.price}</h5>     
-                {item.bids.length ?  
+                {item?.bids?.length?  
                 <h5>Current Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h5> : ''}
                 <br></br>
                                  {item.sold ? 'ITEM SOLD' :

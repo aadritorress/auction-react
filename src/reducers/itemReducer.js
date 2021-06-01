@@ -15,9 +15,10 @@ switch(action.type) {
              items: action.payload
         }  
     case "ADD_ITEM":
+        console.log(action.payload, state.items)
         return {
             ...state, 
-            items: [...state.items, action.payload] 
+            items: [action.payload, ...state.items] 
         }
     case "EDIT_SOLD":
     let updatedItem = action.payload

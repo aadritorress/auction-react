@@ -47,9 +47,10 @@ export const editItem = (item) => async (dispatch) => {
     body: JSON.stringify({item})
     })
     .then (resp => resp.json())
-    .then(item => {
-        const payload = item;
+    .then(data => {
+     const payload = data.item;
         dispatch({type: "EDIT_SOLD", payload})
+        dispatch({type: "EDIT_DONATION", payload: data.charity})
     })
 }
 
