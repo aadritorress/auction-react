@@ -97,13 +97,18 @@ const Items = (props) => {
                 <h5>Initial Price: ${item.price}</h5>     
                 {item?.bids?.length?  
                 <h5>Current Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h5> : ''}
-                <br></br>
-                                 {item.sold ? 'ITEM SOLD' :
-                                 <form onSubmit={(e) => handleSubmit(e, item)} >
-                                 <input type="number"name="amount"placeholder="amount"></input>
-                                 <br></br>
-                                 <button type="submit"  className="action-button"> Bid </button>
-                                 </form>}
+                    {item.sold ? 
+                    <div>
+                    {item.bids.length ?  
+                    <h4>ITEM SOLD 
+                        <br></br>
+                    Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h4> : 'No bids'}
+                    </div> :
+                    <form onSubmit={(e) => handleSubmit(e, item)} >
+                    <input type="number"name="amount"placeholder="amount"></input>
+                    <br></br>
+                    <button type="submit"  className="action-button"> Bid </button>
+                    </form>}
                     </div>
                 );
             })}

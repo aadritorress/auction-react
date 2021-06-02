@@ -79,6 +79,9 @@ class Profile extends Component {
 const user = this.props.user
 // console.log('user:', user)
 const showForm = this.state.showForm;
+
+const item = user.items?.map(item => item)
+console.log(item)
 // debugger 
 // array with all users 
     return (
@@ -119,16 +122,19 @@ const showForm = this.state.showForm;
     <div className="item-card" key={index}>
     <h4>{item.name}</h4>
     <img src={item.image} alt='' width="100" height="100" ></img>
-    <h6>Initial Price: {item.price}</h6>
-    {item.bids ?  
-     <h5>Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h5> : ''}
-    <h6>Condition: {item.condition}</h6>
-    <h6>City: {item.city}</h6>
-    <h6>Item sold: {item.sold ? 'Yes' : "No"}</h6>
-    <button onClick={() => this.handleSold(item)} className="item-button"> {item.sold ? 'Available' : "Sold"} </button>
+    <h5>Initial Price: {item.price}</h5>
+
+    
+    <h5>Condition: {item.condition}</h5>
+    <h5>City: {item.city}</h5>
+    <h5>Item sold: {item.sold ? 'Yes' : "No"}</h5>
+
+    {item.sold ? '' : 
+    <button onClick={() => this.handleSold(item)} className="item-button"> Sold </button>}
     <button onClick={() => this.deleteItem(item)} className="item-button"> Delete </button>
     <br></br>
-    <br></br>
+    {item.bids.length ?  
+    <h5>Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h5> : 'No bids'}
     </div>
     ))}
     </div>
