@@ -49,6 +49,7 @@ export const editItem = (item) => async (dispatch) => {
     .then (resp => resp.json())
     .then(data => {
      const payload = data.item;
+     console.log(data.item)
         dispatch({type: "EDIT_SOLD", payload})
         dispatch({type: "EDIT_DONATION", payload: data.charity})
     })

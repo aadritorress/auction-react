@@ -39,9 +39,14 @@ const Items = (props) => {
         
         let higherAmount = Math.max(...item.bids.map(bid => bid.amount))
 
-        if (bid.amount > higherAmount) {
-            props.addBid(bid); 
-        } else {
+        // if (item.bids.length === 0 && bid.amount > item.price)  {
+        //     props.addBid(bid); 
+        // } else 
+        if
+            (bid.amount > higherAmount && bid.amount >= item.price) {
+                props.addBid(bid); 
+            }
+        else {
         alert('bid cannot be lower than current price');
         }
         e.target.reset()
@@ -59,7 +64,7 @@ const Items = (props) => {
         const [searchTerm, setSearchTerm] = useState(' ')
 
         const items = props.items;
-        console.log(props.items)
+        // console.log(props.items)
        
         return (
 
@@ -99,10 +104,9 @@ const Items = (props) => {
                 <h5>Current Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h5> : ''}
                     {item.sold ? 
                     <div>
-                    {item.bids.length ?  
                     <h4>ITEM SOLD 
                         <br></br>
-                    Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h4> : ''}
+                    Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h4> 
                     </div> :
                     <form onSubmit={(e) => handleSubmit(e, item)} >
                     <input type="number"name="amount"placeholder="amount"></input>
