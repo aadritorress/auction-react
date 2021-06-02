@@ -102,7 +102,7 @@ const Items = (props) => {
                     {item.bids.length ?  
                     <h4>ITEM SOLD 
                         <br></br>
-                    Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h4> : 'No bids'}
+                    Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h4> : ''}
                     </div> :
                     <form onSubmit={(e) => handleSubmit(e, item)} >
                     <input type="number"name="amount"placeholder="amount"></input>

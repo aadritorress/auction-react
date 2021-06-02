@@ -122,19 +122,32 @@ console.log(item)
     <div className="item-card" key={index}>
     <h4>{item.name}</h4>
     <img src={item.image} alt='' width="100" height="100" ></img>
-    <h5>Initial Price: {item.price}</h5>
+    <h5>Initial Price: ${item.price}</h5>
 
     
     <h5>Condition: {item.condition}</h5>
     <h5>City: {item.city}</h5>
-    <h5>Item sold: {item.sold ? 'Yes' : "No"}</h5>
-
-    {item.sold ? '' : 
-    <button onClick={() => this.handleSold(item)} className="item-button"> Sold </button>}
-    <button onClick={() => this.deleteItem(item)} className="item-button"> Delete </button>
-    <br></br>
+    <h5>{item.sold ? 'Item Sold' : "Item Available"}</h5>
+   
     {item.bids.length ?  
-    <h5>Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h5> : 'No bids'}
+    
+    <div>
+    <h5>Final Price: ${Math.max(...item.bids.map(bid => bid.amount))}</h5> 
+
+    <div> 
+    {item.sold ? '' : <button onClick={() => this.handleSold(item)} className="item-button"> Sold </button> } 
+    </div>
+    
+    </div>
+    : 
+    <div>
+    {item.sold ? '' : 'No bids yet'}
+    <br></br>
+    </div>
+    }
+
+
+    <button onClick={() => this.deleteItem(item)} className="item-button"> Delete </button>
     </div>
     ))}
     </div>
